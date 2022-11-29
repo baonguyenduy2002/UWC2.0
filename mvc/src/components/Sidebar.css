@@ -1,0 +1,91 @@
+.Sidebar {
+    position: absolute;
+    width: 165px;
+    height: 982px;
+    left: 0px;
+    top: 0px;
+
+    background: #FCFBFF;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.Sidebar-home {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 46px;
+    top: 50px;
+    border-radius: 50%;
+    border: #FFFFFF;
+    cursor: pointer;
+}
+
+.Sidebar-manemployee {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 46px;
+    top: 150px;
+    border-radius: 50%;
+    border: #FFFFFF;
+    cursor: pointer;
+}
+
+.Sidebar-task {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 46px;
+    top: 250px;
+    border-radius: 50%;
+    border: #FFFFFF;
+    cursor: pointer;
+}
+
+.Sidebar-facility {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 46px;
+    top: 350px;
+    border-radius: 50%;
+    border: #FFFFFF;
+    cursor: pointer;
+}
+
+.Sidebar-chat {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 46px;
+    top: 450px;
+    border-radius: 50%;
+    border: #FFFFFF;
+    cursor: pointer;
+}
+
+.Sidebar-noti {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 46px;
+    top: 550px;
+    border-radius: 50%;
+    border: #FFFFFF;
+    cursor: pointer;
+}
+
+.Sidebar-setting {
+    position: absolute;
+    width: fit-content;
+    height: fit-content;
+    left: 46px;
+    top: 650px;
+    border-radius: 50%;
+    border: #FFFFFF;
+    cursor: pointer;
+}
+
+
+
