@@ -1,8 +1,0 @@
-export {default as home} from './home.svg'
-export {default as chat} from './chat.svg'
-export {default as facility} from './facility.svg'
-export {default as manemployee} from './manemployee.svg'
-export {default as noti} from './noti.svg'
-export {default as setting} from './setting.svg'
-export {default as task} from './task.svg'
-export {default as searchicon} from './searchicon.svg'
