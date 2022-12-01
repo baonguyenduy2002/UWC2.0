@@ -7,7 +7,7 @@ import Notification from "./Notification";
 import Setting from "./Setting";
 
 const routes = [
-	{ path: "", element: Home },
+	{ path: "dashboard", element: Home },
 	{ path: "tasks", element: ManageTask },
 	{ path: "employees", element: ManageEmployee },
 	{ path: "facility", element: Facility },
