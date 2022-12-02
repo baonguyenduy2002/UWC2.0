@@ -1,35 +1,53 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 
 import { Link } from "react-router-dom";
 
 function SideBarButton(props) {
-	const { icon, name, icon_onHover, state, setState } = props;
-	const [iconState, setIconState] = useState(icon);
+	const { item, state, setState } = props;
+	const [iconState, setIconState] = useState(
+		state === item.name ? item.icon_onFocus : item.icon
+	);
 
-	const handleClick = () => {
-		setState(name);
-	};
+	useEffect(
+		() => setIconState(state === item.name ? item.icon_onFocus : item.icon),
+		[state]
+	);
 
-	if (state === name)
+	if (state === item.name) {
 		return (
 			<>
-				<Link key={name} to={name} className="Sidebar-button">
-					<img src={icon} alt={name} />
+				<Link
+					to={item.name}
+					className="Sidebar-button"
+					onBlur={() => setIconState(item.icon)}
+				>
+					<img src={item.icon_onFocus} alt={item.name} />
 				</Link>
 			</>
 		);
+	}
 	return (
 		<>
 			<Link
-				key={name}
-				to={name}
+				to={item.name}
 				className="Sidebar-button"
-				onClick={handleClick}
-				onMouseOver={() => setIconState(icon_onHover)}
-				onMouseLeave={() => setIconState(icon)}
+				onClick={() => setState(item.name)}
+				onMouseOver={() =>
+					setIconState(
+						state === item.name ? item.icon_onFocus : item.icon_onHover
+					)
+				}
+				onMouseLeave={() =>
+					setIconState(state === item.name ? item.icon_onFocus : item.icon)
+				}
+				onBlur={() => setIconState(item.icon)}
 			>
-				<img src={iconState} alt={name} />
+				<img
+					src={state === item.name ? item.icon_onFocus : iconState}
+					alt={item.name}
+				/>
 			</Link>
 		</>
 	);
