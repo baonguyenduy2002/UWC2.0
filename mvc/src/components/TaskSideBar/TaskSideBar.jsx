@@ -10,8 +10,6 @@ const TaskSideBar = () => {
 	const [calendar, setCalendar] = useState(true);
 	const [task, setTask] = useState(false);
 
-	const renderButton = () => {};
-
 	return (
 		<div className="Management">
 			<div className="TaskSidebar">

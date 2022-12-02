@@ -10,9 +10,10 @@ function LoginPage() {
 
 	const [userId, setUserId] = useState("");
 	const [password, setPassword] = useState("");
+	const [rememberMe, setRememberMe] = useState(false);
 
 	const handleSubmit = async () => {
-		login(userId, password);
+		login(userId, password, rememberMe);
 		setTimeout(navigate("/dashboard"), 2000);
 	};
 
@@ -34,7 +35,11 @@ function LoginPage() {
 					onChange={(e) => setPassword(e.target.value)}
 				/>
 				<div className="remember-me">
-					<input className="form-checkbox" type="checkbox" />
+					<input
+						className="form-checkbox"
+						type="checkbox"
+						onChange={() => setRememberMe(rememberMe ? false : true)}
+					/>
 					<p className="normal-text">Remember me</p>
 				</div>
 				<button type="button" className="form-button" onClick={handleSubmit}>

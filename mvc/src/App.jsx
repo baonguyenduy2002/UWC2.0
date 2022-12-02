@@ -9,13 +9,20 @@ const App = () => {
 	return (
 		<div className="App">
 			<Routes>
-				<Route path="/" element={<LoginPage />} />
+				<Route
+					path="/"
+					element={
+						<RequireAuth redirectTo={"/dashboard"}>
+							<LoginPage />
+						</RequireAuth>
+					}
+				/>
 
 				<Route
 					path="/*"
 					element={
-						<RequireAuth>
-							<DashboardPage />{" "}
+						<RequireAuth redirectTo={"/"}>
+							<DashboardPage />
 						</RequireAuth>
 					}
 				/>

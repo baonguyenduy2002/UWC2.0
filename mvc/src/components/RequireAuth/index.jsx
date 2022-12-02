@@ -1,9 +1,15 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-function RequireAuth({ children }) {
+function RequireAuth({ children, redirectTo }) {
+	if (redirectTo === "/dashboard")
+		return localStorage.getItem("isAuthenticated") ? (
+			<Navigate to={redirectTo} replace={true} />
+		) : (
+			children
+		);
 	return !localStorage.getItem("isAuthenticated") ? (
-		<Navigate to={"/"} replace={true} />
+		<Navigate to={redirectTo} replace={true} />
 	) : (
 		children
 	);
