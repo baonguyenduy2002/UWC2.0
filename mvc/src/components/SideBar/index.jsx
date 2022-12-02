@@ -1,23 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import "./Sidebar.css";
-import { icons } from "../../assets/index.js";
+import { iconsSideBar } from "../../assets/index";
+import SideBarButton from "../SideBarButton";
 
 function SideBar() {
-  return (
-    <div className="Sidebar">
-      {icons.map((item) => {
-        return item.name !== "searchIcon" ? (
-          <Link key={item.name} to={item.name} className="Sidebar-button">
-            <img src={item.icon} alt={item.name} />
-          </Link>
-        ) : (
-          false
-        );
-      })}
-    </div>
-  );
+	const [focusedButton, setFocusedButton] = useState("dashboard");
+
+	return (
+		<div className="Sidebar">
+			{iconsSideBar.map((item) => {
+				const { icon, icon_onHover, icon_onFocus, name } = item;
+				const iconState = focusedButton === name ? icon_onFocus : icon;
+
+				return (
+					<SideBarButton
+						key={item.name}
+						icon={iconState}
+						icon_onHover={icon_onHover}
+						name={name}
+						state={focusedButton}
+						setState={setFocusedButton}
+					/>
+				);
+			})}
+		</div>
+	);
 }
 
 export default SideBar;
