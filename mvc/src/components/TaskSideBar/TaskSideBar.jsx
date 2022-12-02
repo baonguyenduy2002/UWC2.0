@@ -10,11 +10,13 @@ const TaskSideBar = () => {
 	const [calendar, setCalendar] = useState(true);
 	const [task, setTask] = useState(false);
 
+	const renderButton = () => {};
+
 	return (
 		<div className="Management">
 			<div className="TaskSidebar">
 				<button
-					className="TaskSidebar-button1"
+					className="TaskSidebar-button button1"
 					onClick={() => {
 						setCalendar(true);
 						setTask(false);
@@ -23,7 +25,7 @@ const TaskSideBar = () => {
 					<img src={iconsTaskSideBar[0].icon} alt="Calendar" />
 				</button>
 				<button
-					className="TaskSidebar-button2"
+					className="TaskSidebar-button button2"
 					onClick={() => {
 						setCalendar(false);
 						setTask(true);

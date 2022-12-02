@@ -12,6 +12,7 @@ function SideBarButton(props) {
 
 	useEffect(
 		() => setIconState(state === item.name ? item.icon_onFocus : item.icon),
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[state]
 	);
 

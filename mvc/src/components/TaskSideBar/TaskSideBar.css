@@ -1,53 +1,48 @@
 .Management {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+	width: 1318px;
+	height: 890px;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
 }
 
 .TaskSideBar {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    background-color: #F3F5F9;
-    align-items: center;
-    justify-content: left;
+	width: 112px;
+	height: 890px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	text-align: center;
+	background-color: #f3f5f9;
 }
 
-.TaskSidebar-button1 {
-    width: fit-content;
-    height: fit-content;
-    block-size: fit-content;
-    border-radius: 20px 0px 0px 0px;
-    display: block;
-    border: #315C57;
-    background-color: #315C57;
+.TaskSidebar-button {
+	width: 112px;
+	height: 445px;
+	cursor: pointer;
 }
 
-.TaskSidebar-button2 {
-    width: fit-content;
-    height: fit-content;
-    block-size: fit-content;
-    border-radius: 0px 0px 0px 20px;
-    display: block;
-    border: #EAF9F3;
-    background-color: #EAF9F3;
+.TaskSidebar-button:hover {
+	background-color: #eaf9f3;
 }
 
-.TaskSidebar-button1:hover {
-    cursor: pointer;
+.TaskSidebar-button:focus {
+	background-color: #315c57;
 }
 
-.TaskSidebar-button2:hover {
-    cursor: pointer;
+.button1 {
+	border-radius: 20px 0px 0px 0px;
+}
+
+.button2 {
+	border-radius: 0px 0px 0px 20px;
 }
 
 .window {
-    width: 1152px;
-    height: 772px; 
-    margin-left: 29px;
-    background-color: red;
+	width: 1152px;
+	height: 772px;
+	margin-left: 29px;
+	background-color: red;
 }
