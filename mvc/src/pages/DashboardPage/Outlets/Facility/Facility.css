@@ -1,0 +1,26 @@
+.ManageMcp {
+    position: absolute;
+    width: 1357px;
+    height: 958px;
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+.MCPList {
+    position: absolute;
+    width: 467px;
+    height: 950px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    background-color: #EAF9F3;
+    border-radius: 30px;
+}
+
+.SearchBar {
+    position: absolute;
+    height: fit-content;
+    width: fit-content;
+    top: 96px;
+    left: 15px;
+}

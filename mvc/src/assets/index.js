@@ -72,7 +72,11 @@ export const icons = [
 		icon_onFocus: setting_onFocus,
 		name: "setting",
 	},
-	{ icon: search, icon_onHover: null, icon_onFocus: null, name: "search" },
+	{ 	icon: search, 
+		icon_onHover: null, 
+		icon_onFocus: null, 
+		name: "search" 
+	},
 	{
 		icon: taskList,
 		icon_onHover: taskList_onHover,
