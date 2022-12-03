@@ -12,6 +12,7 @@ export const login = (userId, password, rememberMe) => {
 		if (userId !== userModel.userId || password !== userModel.password) {
 			throw error;
 		}
+
 		storage.setItem("isAuthenticated", true);
 	} catch (error) {
 		console.log(error);
