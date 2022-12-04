@@ -2,9 +2,10 @@ import React, {useState} from "react";
 
 import "./DropDownMenu.css"
 
-const options = ["MCPs Management", "Vehicles Management"];
+// const options = ["MCPs Management", "Vehicles Management"];
 
-function DropDownMenu() {
+function DropDownMenu(props) {
+    const {options} = props;
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(options[0])
     console.log(options)
