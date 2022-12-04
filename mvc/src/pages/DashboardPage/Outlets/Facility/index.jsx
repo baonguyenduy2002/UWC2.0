@@ -3,6 +3,7 @@ import SearchBar from "../../../../components/SearchBar/index";
 import DropDownMenu from "../../../../components/DropDownMenu/index";
 import AddButton from "../../../../components/AddButton/index"
 import DetailFacility from "../../../../components/DetailFacility/index"
+import MCPTag from "../../../../components/MCPTag/index";
 
 import "./Facility.css";
 
@@ -13,7 +14,42 @@ const MCPs = [
 		name: "MCP 1",
 		area : "Area 1",
 		location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
+		status: 95,
+	},
+	{
+		id: "#111111",
+		name: "MCP 2",
+		area : "Area 1",
+		location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
 		status: 90,
+	},
+	{
+		id: "#123234",
+		name: "MCP 3",
+		area : "Area 2",
+		location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
+		status: 60,
+	},
+	{
+		id: "#444456",
+		name: "MCP 4",
+		area : "Area 2",
+		location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
+		status: 30,
+	},
+	{
+		id: "#773453",
+		name: "MCP 5",
+		area : "Area 3",
+		location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
+		status: 20,
+	},
+	{
+		id: "#000923",
+		name: "MCP 6",
+		area : "Area 3",
+		location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
+		status: 50,
 	},
 ];
 
@@ -21,11 +57,24 @@ function Facility() {
 	return (
 		<div className="ManageMcp">
 			<div className="MCPList">
-				<div className="DropDownMenu"><DropDownMenu /></div>
+				<div className="DropDownMenu"><DropDownMenu options={["MCPs Management", "Vehicles Management"]} /></div>
 				<div className="SearchBar"> <SearchBar /> </div>
 				<p className="TotalMCPs">Total: </p>
 				<hr className="Line"/>
-				<div className="MCPsSrollList"></div>
+				<div className="MCPsSrollList">
+					{MCPs.map((MCP, index) => ( 
+						<div className="McpTag">
+							<MCPTag 
+								key={MCP.id}
+								name={MCP.name}
+								area={MCP.area}
+								status={MCP.status}
+							/>
+						</div>
+					))}
+					
+				</div>
+
 				<div className="Addbutton">
 					<AddButton
 						name="Add MCP"
