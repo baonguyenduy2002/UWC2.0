@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./SettingGeneral.css";
 import { logout } from "../../mock/controller/auth";
 import { useNavigate } from "react-router-dom";
-
+import Logout from "../../assets/icons/logout.svg"
 const SettingGeneral = () => {
 
     const navigate = useNavigate();
@@ -38,6 +38,7 @@ const SettingGeneral = () => {
                         Đăng Xuất
                     </button>
                 </div>
+                <img className="LogoutIcon" src={Logout}></img>
             </div>
         </div>
     );

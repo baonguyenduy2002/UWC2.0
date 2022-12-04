@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-
+import ProfilePicture from "../../assets/image/ProfilePicture.png"
+import edit from "../../assets/icons/edit.svg"
 import "./SettingAccount.css";
 
 const SettingAccount = () => {
@@ -19,7 +20,7 @@ const SettingAccount = () => {
                 Tài Khoản
             </div>
             <div className="ProfilePicture">
-                <img src="../../assets/image/ProfilePicture.jpg" alt="Profile" width={200} height={200}></img>
+                <img src={ProfilePicture} alt="Profile" width={200} height={200}></img>
             </div>
 
             <div className="FirstName">
@@ -29,6 +30,7 @@ const SettingAccount = () => {
                 <input className="Textfield-input txt1" type="text" defaultValue={firstName}>
 
                 </input>
+                <img className="EditIcon" src={edit} alt="" />
             </div>
 
             <div className="LastName">
@@ -38,6 +40,8 @@ const SettingAccount = () => {
                 <input className="Textfield-input txt2" type="text" defaultValue={lastName}>
 
                 </input>
+                <img className="EditIcon" src={edit} alt="" />
+
             </div>
 
             <div className="Username">
@@ -47,6 +51,7 @@ const SettingAccount = () => {
                 <input className="Textfield-input txt3" type="text" defaultValue={username}>
 
                 </input>
+                <img className="EditIcon" src={edit} alt="" />
             </div>
 
             <div className="Password">
@@ -56,6 +61,7 @@ const SettingAccount = () => {
                 <input className="Textfield-input txt4" type="text" defaultValue={password}>
 
                 </input>
+                <img className="EditIcon" src={edit} alt="" />
             </div>
 
             <div className="DateofBirth">
@@ -65,6 +71,7 @@ const SettingAccount = () => {
                 <input className="Textfield-input txt5" type="text" defaultValue={dateofBirth}>
 
                 </input>
+                <img className="EditIcon" src={edit} alt="" />
             </div>
 
             <div className="Email">
@@ -74,6 +81,7 @@ const SettingAccount = () => {
                 <input className="Textfield-input txt6" type="text" defaultValue={email}>
 
                 </input>
+                <img className="EditIcon" src={edit} alt="" />
             </div>
 
             <div className="Address">
@@ -83,6 +91,8 @@ const SettingAccount = () => {
                 <input className="Textfield-input txt7" type="text" defaultValue={address}>
 
                 </input>
+                <img className="EditIcon ic7" src={edit} alt="" />
+
             </div>
         </div >
     );
