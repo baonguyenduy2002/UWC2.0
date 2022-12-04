@@ -1,0 +1,136 @@
+.DetailInfor {
+    width: 860px;
+    height: 950px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(147, 202, 172, 0.15);
+}
+
+#McpName {
+    position: absolute;
+    top: 40px;
+    left: 35px;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 75px;
+    color: #315C57;
+}
+
+#McpArea {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    opacity: 0.8;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 37.5px;
+
+    position: absolute;
+    left: 35px;
+    top: 100px;
+}
+
+#McpId {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 60px;
+
+    position: absolute;
+    left: 622px;
+    top: 55px;
+}
+
+#Location {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+
+    position: absolute;
+    left: 35px;
+    top: 188px;
+}
+
+#Status {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+
+    position: absolute;
+    left: 35px;
+    top: 324px;
+}
+
+#McpLocation {
+    margin: 0;
+    width: 642px;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+
+    text-align: left;
+    position: absolute;
+    left: 180px;
+    top: 192px;
+}
+
+#McpStatus {
+    margin: 0;
+    width: 642px;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+
+    text-align: left;
+    position: absolute;
+    left: 180px;
+    top: 325px;
+}
+
+.McpMap {
+    position: absolute;
+    top: 435px;
+    left: 5px;
+    width: 850px;
+    height: 465px;
+    background-color: #315C57;
+    border-radius: 5px;
+}

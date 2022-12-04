@@ -1,0 +1,20 @@
+.AddButton {
+    background-color: #fff;
+    border: none;
+    height: 30px;
+    width: 150px;
+    border-radius: 5px;
+
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+    color: #315C57;
+    box-shadow: 0px 4px 4px rgba(147, 202, 172, 0.15);
+}
+
+.AddButton:hover {
+    background-color: #93CAAC;
+    color: #fff;
+}
