@@ -1,20 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-
-import { logout } from "../../../../mock/controller/auth";
+import SettingGeneral from "../../../../components/SettingGeneral/SettingGeneral";
+import SettingAccount from "../../../../components/SettingAccount/SettingAccount";
 
 function Setting() {
-	const navigate = useNavigate();
 
-	const handleSubmit = () => {
-		logout();
-		setTimeout(navigate("/"), 2000);
-	};
 
 	return (
-		<div>
-			<div>Setting</div>
-			<button onClick={handleSubmit}>Logout</button>
+		<div className="Setting">
+			<SettingGeneral />
+			<SettingAccount />
 		</div>
 	);
 }
