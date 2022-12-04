@@ -70,7 +70,6 @@
     overflow-y: auto;
     overflow-x: hidden;
     border-radius: 10px;
-    background-color: red;
 }
 
 .Addbutton {
@@ -90,4 +89,13 @@
     border-radius: 30px;
     margin-top: 4px;
     margin-bottom: 4px;
+}
+
+.McpTag {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    left: 15px;
 }

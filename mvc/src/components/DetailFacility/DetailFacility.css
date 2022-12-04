@@ -107,24 +107,6 @@
     top: 192px;
 }
 
-#McpStatus {
-    margin: 0;
-    width: 642px;
-    height: fit-content;
-    font-family: 'Poppins';
-
-    color: #315C57;
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 42px;
-
-    text-align: left;
-    position: absolute;
-    left: 180px;
-    top: 325px;
-}
-
 .McpMap {
     position: absolute;
     top: 435px;

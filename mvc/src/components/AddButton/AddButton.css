@@ -16,5 +16,10 @@
 
 .AddButton:hover {
     background-color: #93CAAC;
-    color: #fff;
+    color: #EAF9F3;
+}
+
+.AddButton:focus {
+    background-color: #315C57;
+    color: #EAF9F3;
 }

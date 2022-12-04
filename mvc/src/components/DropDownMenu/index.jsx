@@ -8,16 +8,14 @@ function DropDownMenu(props) {
     const {options} = props;
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(options[0])
-    console.log(options)
 
     const toggling = () => setIsOpen(!isOpen);
 
     const onOptionClicked = value => () =>{
         setSelectedOption(value);
         setIsOpen(false);
-        console.log(value)
     }
-
+    
     return (
         <div className="DropDownContainer">
             <div className="DropDownHeader" onClick={toggling}>{selectedOption}</div>
