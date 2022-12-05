@@ -18,7 +18,7 @@ const ProgressBar = (props) => {
             className="ProgressBarContainer"
             style={{
                 width: 'fit-content',
-                height: props.size == "small" ? 50:80,
+                height: props.size === "small" ? 50:80,
 
             }}
         >
@@ -33,11 +33,11 @@ const ProgressBar = (props) => {
             <span
                 style={{
                     position: "absolute",
-                    top: props.size == "small" ? 15:35,
+                    top: props.size === "small" ? 15:35,
                     left: 0,
                     fontFamily: "'Helvetica'",
                     fontWeight: 400,
-                    fontSize: props.size == "small" ? 14:28,
+                    fontSize: props.size === "small" ? 14:28,
                     lineHeight: '16px',
                     color: "#315C57",
                     opacity: 0.8,
@@ -52,11 +52,11 @@ const ProgressBar = (props) => {
             <span
                 style={{
                     position: "absolute",
-                    top: props.size == "small" ? 15:35,
+                    top: props.size === "small" ? 15:35,
                     right: 0,
                     fontFamily: "'Helvetica'",
                     fontWeight: 400,
-                    fontSize: props.size == "small" ? 14:28,
+                    fontSize: props.size === "small" ? 14:28,
                     lineHeight: '16px',
                     color: "#315C57",
                 }}

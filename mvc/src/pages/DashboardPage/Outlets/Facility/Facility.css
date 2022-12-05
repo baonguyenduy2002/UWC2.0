@@ -1,4 +1,4 @@
-.ManageMcp {
+.ManageContainer {
     position: absolute;
     width: 1357px;
     height: 958px;
@@ -6,7 +6,7 @@
     background-color: #fff;
 }
 
-.MCPList {
+.List {
     position: absolute;
     width: 467px;
     height: 950px;
@@ -51,14 +51,43 @@
     opacity: 0.8;
 }
 
+.VehiclesStatus {
+    position: absolute;
+    left: 14px;
+    top: 150px;
+    width: fit-content;
+
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #315C57;
+
+    opacity: 0.8;
+}
+
 .Line {
     position: absolute;
-    top: 165px;
+    /* top: 165px; */
+    top: 150px;
     height: 2px;
     width: 466px;
     opacity: 0.2;
     background-color: #315C57;
     padding: 0;
+}
+
+.VehiclesSrollList {
+    position: relative;
+    top: 200px;
+    left: 9px;
+    height: 700px;
+    width: 449px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 10px;
+    /* background-color: rebeccapurple; */
 }
 
 .MCPsSrollList {

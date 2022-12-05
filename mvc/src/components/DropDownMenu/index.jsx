@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import { iconsDropDownMenu } from "../../assets/index";
 
-import "./DropDownMenu.css"
+import "./Dropdownmenu.css"
 
 // const options = ["MCPs Management", "Vehicles Management"];
 
@@ -18,7 +19,17 @@ function DropDownMenu(props) {
     
     return (
         <div className="DropDownContainer">
-            <div className="DropDownHeader" onClick={toggling}>{selectedOption}</div>
+            <div className="DropDownHeader" onClick={toggling}>
+                {selectedOption}
+                <img 
+                    src={ isOpen ? iconsDropDownMenu[1].icon:iconsDropDownMenu[0].icon} 
+                    alt="arrowDropDown" 
+                    style={{
+                        position: "relative",
+                        left: 40
+                    }}
+                />
+            </div>
             {isOpen && (
                 <div classNam="DropDownListContainer">
                     <ul className="DropDownList">

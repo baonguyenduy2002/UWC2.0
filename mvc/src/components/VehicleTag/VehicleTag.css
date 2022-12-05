@@ -1,0 +1,78 @@
+.TagContainer {
+    width: 390px;
+    height: 152.19px;
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.VehicleTagName {
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+
+    position: absolute;
+    top: 25px;
+    left: 25px;
+
+
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}
+
+.VehicleTagId {
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+
+    position: absolute;
+    top: 60px;
+    left: 25px;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}
+
+.VehicleTagRoute {
+    height: fit-content;
+    width: fit-content;
+
+    position: absolute;
+    top: 70px;
+    left: 25px;
+
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}
+
+.VehiclesTagStatus{
+    height: 38px;
+    width: 112px;
+
+    position: absolute;
+    top: 25px;
+    left: 250px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}

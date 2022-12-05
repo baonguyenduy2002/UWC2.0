@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./MCPTag.css";
 import ProgressBar from "../ProgressBar/index";
 

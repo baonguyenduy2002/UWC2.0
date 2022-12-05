@@ -9,8 +9,8 @@ const ProgressBarBase = (props) => {
         <div 
             className="ProgressBar"
             style={{
-                height: size == "small" ? 9:20,
-                width: size == "small" ? 343:630,
+                height: size === "small" ? 9:20,
+                width: size === "small" ? 343:630,
                 backgroundColor: '#D9D9D9',
                 borderRadius: 10
             }}

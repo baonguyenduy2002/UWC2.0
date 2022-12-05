@@ -8,6 +8,10 @@ import setting from "./icons/setting.svg";
 import search from "./icons/search.svg";
 import taskList from "./icons/taskList.svg";
 import calendar from "./icons/calendar.svg";
+import arrowDropDown from "./icons/arrowDropDown.svg";
+import arrowUpward from "./icons/arrowUpward.svg";
+import activeBox from "./icons/activeBox.svg"
+import inactiveBox from "./icons/inactiveBox.svg"
 
 import home_onHover from "./icons_onHover/home_onHover.svg";
 import employee_onHover from "./icons_onHover/employee_onHover.svg";
@@ -150,3 +154,33 @@ export const iconsTaskSideBar = [
 		name: "calendar",
 	},
 ];
+
+export const iconsDropDownMenu = [
+	{
+		icon: arrowDropDown,
+		icon_onFocus: null,
+		icon_onHover: null,
+		name: "arrowDropDown"
+	},
+	{
+		icon: arrowUpward,
+		icon_onFocus: null,
+		icon_onHover: null,
+		name: "arrowUpward"
+	},
+];
+
+export const iconsActiveBox = [
+	{
+		icon: activeBox,
+		icon_onFocus: null,
+		icon_onHover: null,
+		name: "activeBox"
+	},
+	{
+		icon: inactiveBox,
+		icon_onFocus: null,
+		icon_onHover: null,
+		name: "inactiveBox"
+	},
+]
