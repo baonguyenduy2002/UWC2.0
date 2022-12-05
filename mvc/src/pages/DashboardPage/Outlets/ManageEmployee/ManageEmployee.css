@@ -1,0 +1,18 @@
+.ManageEmployeeContainer {
+    background-color: red;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.EmployeeList {
+    position: absolute;
+    background-color: blue;
+    bottom: 0;
+    width: 100%;
+    height: 850px;
+    max-height: 850px;
+    display: grid;
+    overflow: auto;
+    gap: 50px 50px;
+}

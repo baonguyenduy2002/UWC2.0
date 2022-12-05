@@ -56,70 +56,28 @@ const MCPs = [
 ];
 
 function Facility() {
-	// return (
-	// 	<div className="ManageMcp">
-	// 		<div className="MCPList">
-	// 			<div className="DropDownMenu"><DropDownMenu options={["MCPs Management", "Vehicles Management"]} /></div>
-	// 			<div className="SearchBar"> <SearchBar /> </div>
-	// 			<p className="TotalMCPs">Total: </p>
-	// 			<hr className="Line"/>
-	// 			<div className="MCPsSrollList">
-	// 				{MCPs.map(MCP=> ( 
-	// 					<div className="McpTag">
-	// 						<MCPTag 
-	// 							key={MCP.id}
-	// 							name={MCP.name}
-	// 							area={MCP.area}
-	// 							status={MCP.status}
-	// 						/>
-	// 					</div>
-	// 				))}
-	// 			</div>
-	// 			<div className="Addbutton">
-	// 				<AddButton
-	// 					name="Add MCP"
-	// 				>
-	// 				</AddButton>
-	// 			</div>
-	// 		</div>
-	// 		<div className="ShowDetail">
-	// 			<DetailFacility
-	// 				id = {MCPs[0].id}
-	// 				name = {MCPs[0].name}
-	// 				area = {MCPs[0].area}
-	// 				location = {MCPs[0].location}
-	// 				status = {MCPs[0].status}
-	// 			>
-	// 			</DetailFacility>
-	// 		</div>
-
-	// 	</div>
-	// )
-
 	return (
 		<div className="ManageContainer">
 			<div className="List">
 				<div className="DropDownMenu"><DropDownMenu options={["MCPs Management", "Vehicles Management"]} /></div>
 				<div className="SearchBar"> <SearchBar /> </div>
+				<p className="TotalMCPs">Total: </p>
 				<hr className="Line"/>
-				<p className="VehiclesStatus">
-					Total: &emsp;&emsp; 
-					<img src={iconsActiveBox[0].icon}></img>&nbsp;Active: &emsp;&emsp; 
-					<img src={iconsActiveBox[1].icon}></img>&nbsp;Inactive:
-				</p>
-				<div className="VehiclesSrollList">
-					<div className="McpTag">
-	 					<VehicleTag 
-							name="Truck 1"
-							id="CH11"
-							route={["MCP 1", "MCP 2", "MCP 3"]}
-							status="Active"
-						/>		
-	 				</div>
+				<div className="MCPsSrollList">
+					{MCPs.map(MCP=> ( 
+						<div className="McpTag">
+							<MCPTag 
+								key={MCP.id}
+								name={MCP.name}
+								area={MCP.area}
+								status={MCP.status}
+							/>
+						</div>
+					))}
 				</div>
 				<div className="Addbutton">
 					<AddButton
-						name="Add Vehicle"
+						name="Add MCP"
 					>
 					</AddButton>
 				</div>
@@ -137,6 +95,49 @@ function Facility() {
 
 		</div>
 	)
+
+	// return (
+	// 	<div className="ManageContainer">
+	// 		<div className="List">
+	// 			<div className="DropDownMenu"><DropDownMenu options={["MCPs Management", "Vehicles Management"]} /></div>
+	// 			<div className="SearchBar"> <SearchBar /> </div>
+	// 			<hr className="Line"/>
+	// 			<p className="VehiclesStatus">
+	// 				Total: &emsp;&emsp; 
+	// 				<img src={iconsActiveBox[0].icon}></img>&nbsp;Active: &emsp;&emsp; 
+	// 				<img src={iconsActiveBox[1].icon}></img>&nbsp;Inactive:
+	// 			</p>
+	// 			<div className="VehiclesSrollList">
+	// 				<div className="McpTag">
+	//  					<VehicleTag 
+	// 						name="Truck 1"
+	// 						id="CH11"
+	// 						route={["MCP 1", "MCP 2", "MCP 3"]}
+	// 						status="Active"				
+	// 					/>	
+	//  				</div>
+	// 			</div>
+	// 			<div className="Addbutton">
+	// 				<AddButton
+	// 					name="Add Vehicle"
+	// 				>
+	// 				</AddButton>
+	// 			</div>
+	// 		</div>
+	// 		<div className="ShowDetail">
+	// 			<DetailFacility
+	// 				id ="#CH11"
+	// 				name = "Truck 1"
+	// 				capacity = {5000}
+	// 				curFuel={18}
+	// 				totalFuel={221}
+	// 				route={["MCP 1", "MCP 2", "MCP 3"]}
+	// 				status = "Active"
+	// 			>
+	// 			</DetailFacility>
+	// 		</div>
+	// 	</div>
+	// )
 }
 
 
