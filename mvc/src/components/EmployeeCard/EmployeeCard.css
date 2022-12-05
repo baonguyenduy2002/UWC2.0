@@ -1,99 +1,49 @@
 .CardContainer {
     background-color: #fff;
     overflow: hidden;
-    width: 280px;
-    height: 350px;
+    width: 270px;
+    height: 190px;
+    border-radius: 10px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 15px;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.5s;
+    animation: ease-in;
+    color: #315C57;
+}
+
+.CardContainer:hover {
+    transform: scale(1,1);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+
+
+.Photo img{
+    justify-self: left;
+    overflow: hidden;
+    width: 100px; 
+    height: 120px;
 }
 
 .Photo {
-    position: absolute;
-    width: fit-content;
-    height: fit-content;
-    left: 10px;
-    top: 10px;
-    margin: 0;
-    padding: 0 auto;
-}
-
-.EmployeeName {
-    position: relative;
-    margin: 0;
-    padding: 0 auto;
     height: fit-content;
     width: fit-content;
-    font-size: 20px;
-    font-weight: 600;
-    left: 115px;
-    top: 15px;
 }
 
-.EmployeeType{
-    position: relative;
-    margin: 0;
-    padding: 0 auto;
+.BasicInfo {
     height: fit-content;
     width: fit-content;
-    font-size: 19px;
-    font-weight: 350;
-    left: 115px;
-    top: 20px;
 }
 
-.EmployeeId {
-    position: absolute;
-    margin: 0;
-    padding: 0 auto;
+.CurrentTaskTitle {
     height: fit-content;
     width: fit-content;
-    font-size: 20px;
-    font-weight: 400;
-    left: 190px;
-    top: 47px;
 }
 
-.WorkingStatus {
-    position: absolute;
-    left: 115px;
-    top: 85px;
-
-    font-size: 18px;
-    font-weight: 450;
-}
-
-.DoB {
+.CurrentTaskContent {
     height: fit-content;
     width: fit-content;
-    position: absolute;
-    top: 150px;
-    left: 10px;
-}
-
-#DoBContent {
-    margin: 0;
-    padding: 0 auto;
-    width: fit-content;
-    height: fit-content;
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.Address {
-    margin: 0;
-    height: fit-content;
-    width: fit-content;
-    
-    
-    position: relative;
-    top: 130px;
-    left: 10px;
-}
-
-#AddressContent {
-    margin: 0;
-    padding: 0 auto;
-    width: fit-content;
-    height: fit-content;
-    max-width: 273px;
-    font-size: 18px;
-    font-weight: 400;
 }
