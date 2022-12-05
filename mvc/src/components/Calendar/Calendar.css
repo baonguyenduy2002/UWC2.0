@@ -366,6 +366,8 @@
     background-color: transparent;
     border: none;
     text-decoration: none;
+    width: 9rem;
+    margin: auto;
 }
 
 .MenuItemActive{
@@ -378,6 +380,8 @@
     padding-right: 1rem; 
     border: none;
     text-decoration: none;
+    width: 9rem;
+    margin: auto; 
 }
 
 .MenuButton{

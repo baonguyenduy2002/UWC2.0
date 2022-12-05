@@ -1,5 +1,6 @@
 import React from "react";
 import { Menu, Transition } from '@headlessui/react'
+import { Dialog } from '@headlessui/react'
 import { DotsVerticalIcon, PlusIcon } from '@heroicons/react/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import {
@@ -288,26 +289,26 @@ function Meeting({ meeting }) {
             <div className="MenuBox">
               <Menu.Item>
                 {({ active }) => (
-                  <a
-                    href="#"
+                  <button
+                    onClick= {AddDialog}
                     className={
                       active ? "MenuItemActive" : "MenuItem"
                     }
                   >
                     Edit
-                  </a>
+                  </button>
                 )}
               </Menu.Item>
               <Menu.Item>
                 {({ active }) => (
-                  <a
-                    href="#"
+                  <button
+                    
                     className={
                       active ? "MenuItemActive" : "MenuItem"
                     }
                   >
                     Remove
-                  </a>
+                  </button>
                 )}
               </Menu.Item>
             </div>
@@ -329,12 +330,22 @@ let colStartClasses = [
 ]
 
 function AddDialog() {
+  // The open/closed state lives outside of the Dialog and is managed by you
   let [isOpen, setIsOpen] = useState(true)
 
+  function handleDeactivate() {
+    // ...
+  }
+
   return (
+    /*
+      Pass `isOpen` to the `open` prop, and use `onClose` to set
+      the state back to `false` when the user clicks outside of
+      the dialog or presses the escape key.
+    */
     <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
       <Dialog.Panel>
-        <Dialog.Title>Add new task</Dialog.Title>
+        <Dialog.Title>Deactivate account</Dialog.Title>
         <Dialog.Description>
           This will permanently deactivate your account
         </Dialog.Description>
@@ -344,8 +355,12 @@ function AddDialog() {
           will be permanently removed. This action cannot be undone.
         </p>
 
-        <button onClick={() => setIsOpen(false)}>Deactivate</button>
+        {/*
+          You can render additional buttons to dismiss your dialog by setting
+          `isOpen` to `false`.
+        */}
         <button onClick={() => setIsOpen(false)}>Cancel</button>
+        <button onClick={handleDeactivate}>Deactivate</button>
       </Dialog.Panel>
     </Dialog>
   )
