@@ -64,13 +64,65 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
-    text-align: center;
+
     color: #315C57;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
 
     background: #93CAAC;
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border: 0;
+}
 
+.Dropdown-list {
+    position: absolute;
+    width: 517px;
+    height: 190px;
+    left: 0%;
+    top: 85%;
+}
+
+
+
+.Dropdown-list-item {
+    position: relative;
+    width: 517px;
+    height: 95px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #315C57;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.Dropdown-list-item:hover {
+    background: #93CAAC;
+}
+
+.ImgDropdown {
+    position: relative;
+    top: 52.5%;
+    left: 30%;
+}
+
+.item1 {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.item2 {
+    border-radius: 0px 0px 10px 10px;
 }
 
 .Logout {
