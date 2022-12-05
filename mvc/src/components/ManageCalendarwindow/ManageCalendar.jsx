@@ -1,11 +1,12 @@
 import React from "react";
 
 import "./ManageCalendar.css";
+import TaskCalendar from "../Calendar/Calendar";
 
 const ManageCalendar = () => {
   return (
     <div className="ManageCalendar">
-      <div>ManageCalendar</div>
+      <TaskCalendar />
     </div>
   );
 };

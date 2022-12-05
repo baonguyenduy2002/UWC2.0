@@ -1,0 +1,76 @@
+.RightSideBarFrame{
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-direction: column;
+    width: 360px;
+    background-color: white;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.MyInfoTag{
+    margin-top: 20px;;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #EAF9F3;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    height: 100px;
+
+}
+
+.Avatar{
+    width: 3rem; 
+    height: 3rem; 
+    border-radius: 9999px; 
+    margin-right: 10x
+}
+
+.MyInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: none;
+    border: none;
+    margin-left: 10px;
+}
+
+.MyName{
+    margin-top: -5px;
+    color: #315C57;
+    font-size: larger;
+    font-weight: bold;
+    text-align: left;
+}
+
+.MyTitle{
+    margin-top: -15px;
+    color: #7F9998;
+    font-size: medium;
+    text-align: left;
+}
+
+.MiniNotification{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 400px;
+    background-color: #315C57;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+
+}
+
+.MiniCalendar{
+    margin-bottom: 20px;;
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 400px;
+    background-color: #EAF9F3;
+    border: 1px solid #315C57;
+    border-radius: 20px 20px 20px 20px;
+}
