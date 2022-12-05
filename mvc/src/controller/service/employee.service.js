@@ -1,8 +1,13 @@
 import { employeeData } from "../data/employee";
 
 let employeeData_temp;
-let id = "CO1125";
+let id_temp = "CO1129";
+let photoURL_temp =
+	"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png";
 
+const PHOTO_URL_BASE =
+	"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
+const PHOTO_URL_BASE_LENGTH = 96;
 //-----------------------------------------Get one Employee--------------------------
 export const getEmployee = (id) =>
 	new Promise((resolve, reject) => {
@@ -38,16 +43,27 @@ export const createEmployee = (data) =>
 		if (!data.emId || !data.des) {
 			reject(new Error("Not enough information!"));
 		}
-		const words = id.split("O");
+
+		//Id autoincrement
+		const words = id_temp.split("O");
 		const number = parseInt(words[1]) + 1;
-		id = words[0] + number.toString();
+		id_temp = words[0] + number.toString();
+
+		// Get new profile photo
+		const word = photoURL_temp.slice(
+			PHOTO_URL_BASE_LENGTH,
+			photoURL_temp.indexOf(".png")
+		);
+		const num = parseInt(word) + 1;
+		photoURL_temp = PHOTO_URL_BASE + num.toString() + ".png";
 
 		const newEmployee = {
-			id,
+			id_temp,
 			...data,
+			photoURL_temp,
 		};
 
-		employeeData_temp = { ...employeeData_temp, [id]: newEmployee };
+		employeeData_temp = { ...employeeData_temp, [id_temp]: newEmployee };
 
 		setTimeout(() => resolve(true), 300);
 	});
