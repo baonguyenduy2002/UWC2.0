@@ -1,7 +1,7 @@
 import { taskData } from "../data/task";
 
 let taskData_temp;
-let id = "T11";
+let id = "T20";
 
 //-----------------------------------------Get one Task--------------------------
 export const getTask = (id) =>
@@ -38,7 +38,10 @@ export const createTask = (data) =>
 		if (!data.emId || !data.des) {
 			reject(new Error("Not enough information!"));
 		}
-		id = id + "1";
+		const words = id.split("T");
+		const number = parseInt(words[1]) + 1;
+		id = words[0] + number.toString();
+		id = "T" + id;
 		const newTask = {
 			id,
 			...data,
