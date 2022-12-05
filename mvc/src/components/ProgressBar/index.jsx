@@ -4,8 +4,6 @@ import ProgressBarBase from "../ProgressBarBase/index";
 
 const ProgressBar = (props) => {
     const [completedPart, setCompletedPart] = useState(0);
-    console.log(completedPart);
-
    
     useEffect(() => {
         
