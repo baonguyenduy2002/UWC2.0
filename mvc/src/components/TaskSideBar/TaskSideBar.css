@@ -12,7 +12,7 @@
 	height: 890px;
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
 	background-color: #f3f5f9;

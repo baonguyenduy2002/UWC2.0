@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import login_background from "../../assets/image/login_background.svg";
 import "./LoginPage.css";
-import { login } from "../../mock/controller/auth";
+import { login } from "../../controller/service/auth";
 
 function LoginPage() {
 	const navigate = useNavigate();
