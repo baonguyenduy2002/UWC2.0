@@ -40,7 +40,7 @@ export const getEmployees = () =>
 //-----------------------------------------Create new Employee--------------------------
 export const createEmployee = (data) =>
 	new Promise((resolve, reject) => {
-		if (!data.emId || !data.des) {
+		if (!data.name || !data.type) {
 			reject(new Error("Not enough information!"));
 		}
 
@@ -93,11 +93,11 @@ export const updateEmployee = (id, data) =>
 		return setTimeout(() => resolve(true), 300);
 	});
 
-const taskService = {
+const employeeService = {
 	getEmployee,
 	getEmployees,
 	createEmployee,
 	removeEmployee,
 	updateEmployee,
 };
-export default taskService;
+export default employeeService;
