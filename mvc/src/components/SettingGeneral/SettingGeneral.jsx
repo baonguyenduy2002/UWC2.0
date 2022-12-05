@@ -27,6 +27,12 @@ const SettingGeneral = () => {
     function handleLangChoose(lang) {
         setMessage(lang)
         setIsShown(current => !current)
+        if (icon == close) {
+            setIcon(open)
+        }
+        else {
+            setIcon(close)
+        }
     }
 
     const navigate = useNavigate();

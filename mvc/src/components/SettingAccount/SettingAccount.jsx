@@ -6,13 +6,13 @@ import "./SettingAccount.css";
 
 const SettingAccount = () => {
 
-    let firstName = "Maria";
-    let lastName = "Memon";
-    let dateofBirth = "14/09/1989";
-    let email = "maria.memon@gmail.com";
-    let address = "286 Ly Thuong Kiet, Ward 14, District 10, Ho Chi Minh City";
-    let username = "maria.memon";
-    let password = "password";
+    const [firstName, setFirstName] = useState("Maria");
+    const [lastName, setLastName] = useState("Memon");
+    const [dateofBirth, setDateofBirth] = useState("14/09/1989");
+    const [email, setEmail] = useState("maria.memon@gmail.com");
+    const [address, setAddress] = useState("286 Ly Thuong Kiet, Ward 14, District 10, Ho Chi Minh City");
+    const [username, setUsername] = useState("maria.memon");
+    const [password, setPassword] = useState("password");
 
     return (
         <div className="AccountSetting">
