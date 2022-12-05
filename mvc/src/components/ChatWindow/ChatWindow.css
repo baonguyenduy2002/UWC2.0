@@ -79,22 +79,101 @@
 
 .ChatInput-field {
     position: relative;
+    width: 780px;
+    height: 47px;
+    top: 22.5%;
+    left: 5%;
+}
+
+.ChatInput-input-field {
+    position: relative;
     width: 771px;
     height: 40px;
-    top: 25%;
-    left: 5%;
 
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    color: #7B6E94;
     background: #FCFBFF;
     border-radius: 20px;
 }
 
-.ChatInput-field-default-text {
+.SendIcon-container {
     position: relative;
-    width: 144px;
-    height: 16px;
+    width: 40px;
+    height: 40px;
 
-    left: 2.5%;
-    top: 27.5%;
+    left: 93.5%;
+    bottom: 32.5%;
+}
+
+.ChatView {}
+
+.msg1 {
+    position: relative;
+    width: 288px;
+    height: 42px;
+    top: 2.5%;
+    left: 57.5%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px;
+    background: #F3F3F3;
+    border-radius: 20px;
+}
+
+
+.msg2 {
+    position: relative;
+    width: 339px;
+    height: 122px;
+    top: 7.5%;
+    left: 7.5%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 10px;
+
+    color: #000000;
+    background: #EAF9F3;
+    border-radius: 20px;
+}
+
+.Avatar1 {
+    position: relative;
+    right: 46.15%;
+    top: 41.5%;
+}
+
+.Avatar2 {
+    position: relative;
+    left: 46.15%;
+    top: -4.5%;
+}
+
+.ChatTime {
+    position: relative;
+    width: 149px;
+    height: 24px;
+    top: 7.5%;
+    left: 50%;
 
     font-family: 'Roboto';
     font-style: normal;
@@ -103,14 +182,7 @@
     line-height: 15px;
     display: flex;
     align-items: center;
-    color: #7B6E94;
-}
+    text-align: center;
 
-.SendIcon {
-    position: relative;
-    width: 40px;
-    height: 40px;
-
-    left: 45%;
-    bottom: 25%;
+    color: #000000;
 }
