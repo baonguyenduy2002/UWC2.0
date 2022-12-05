@@ -1,0 +1,121 @@
+.MainFrame{
+    padding-top: 10px;
+    height: 940px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+}
+
+.DashboardTitle{
+    padding-left: 2rem;
+    text-align: left;
+    color: #315C57;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: -5px;
+}
+
+.TaskHeader{
+    text-align: left;
+    display: flex;
+    margin-top: 0;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-left: 40px;
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+    height: 200px;
+}
+
+.TaskTitle{
+    margin-top: 10px;
+    font-size: 2rem;
+    color: #315C57
+}
+
+.TaskSubTitle{
+    margin-top: -20px;
+    font-weight: normal;
+    font-size: 1.25rem;
+    color: #7F9998;
+}
+
+.TaskButton{
+    margin-top: 10px;
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+    background-color: #315C57;
+    border: none;
+    text-decoration: none;
+    width: 180px;
+    height: 35px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.DashboardGraph{
+    position: absolute;
+    top: 20px;
+    left: 610px;
+}
+
+.MCPsHeader{
+    margin-top: -20px;
+    padding-left: 20px;
+    text-align: left;
+    color: #7F9998;
+}
+
+.MCPsFrame{
+    margin-top: -30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 200px;
+    width: 955px;
+    border: none;
+    background-color: transparent;
+}
+
+.MCPsTag{
+    margin-top: 0px;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.MapEmployeeFrame{
+    margin-top: -10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+    height: 300px;
+    width: 955px;
+    border: none;
+    background-color: transparent;
+}
+
+.DashboardMiniMap{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    align-items: center;
+    width: 625px;
+}
+
+.DashboardEmployeePreview{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: none;
+    border-radius: 20px 20px 20px 20px;
+    align-items: center;
+    width: 305px;
+}

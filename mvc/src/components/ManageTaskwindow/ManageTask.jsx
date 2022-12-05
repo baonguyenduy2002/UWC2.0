@@ -34,11 +34,13 @@ const ManageTask = () => {
 
 		try {
 			api.taskController.createTask({
+				imageUrl:
+					"https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 				des: des,
 				emId: emId,
-				date: "00/00/2022",
-				time: "00g00 - 00g00",
 				collector: "No name",
+				startDatetime: "2022-12-01T12:00",
+				endDatetime: "2022-12-01T12:30",
 				workingArea: "default",
 				mcps: [],
 				vehicle: "default",
