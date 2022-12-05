@@ -109,8 +109,8 @@ function classNames(...classes) {
 
 export default function TaskCalendar() {
   let today = startOfToday()
-  let [selectedDay, setSelectedDay] = useState(today)
-  let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
+  const [selectedDay, setSelectedDay] = useState(today)
+  const [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
   let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
 
   let days = eachDayOfInterval({
@@ -320,7 +320,7 @@ function Meeting({ meeting }) {
   )
 }
 
-let colStartClasses = [
+const colStartClasses = [
   "ColStart1",
   "ColStart2",
   "ColStart3",

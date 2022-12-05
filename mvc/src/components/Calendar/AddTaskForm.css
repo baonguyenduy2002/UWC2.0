@@ -1,0 +1,8 @@
+.ButtonStyle{
+    color: white; 
+    height: 100px; 
+    width: 130px;
+    border: none;
+    background-color: #315C57; 
+    border-radius: 5px 5px 5px 5px
+}
