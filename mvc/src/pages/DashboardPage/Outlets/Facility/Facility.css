@@ -51,22 +51,6 @@
     opacity: 0.8;
 }
 
-.VehiclesStatus {
-    position: absolute;
-    left: 14px;
-    top: 150px;
-    width: fit-content;
-
-    font-family: 'Poppins';
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-
-    color: #315C57;
-
-    opacity: 0.8;
-}
-
 .Line {
     position: absolute;
     /* top: 165px; */
@@ -76,18 +60,6 @@
     opacity: 0.2;
     background-color: #315C57;
     padding: 0;
-}
-
-.VehiclesSrollList {
-    position: relative;
-    top: 200px;
-    left: 9px;
-    height: 700px;
-    width: 449px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-radius: 10px;
-    /* background-color: rebeccapurple; */
 }
 
 .MCPsSrollList {
@@ -127,4 +99,33 @@
     height: fit-content;
     position: relative;
     left: 15px;
+}
+/*-----------------------------------*/
+/* Vehicles Management */
+.VehiclesStatus {
+    position: absolute;
+    left: 14px;
+    top: 150px;
+    width: fit-content;
+
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #315C57;
+
+    opacity: 0.8;
+}
+
+.VehiclesSrollList {
+    position: relative;
+    top: 200px;
+    left: 9px;
+    height: 700px;
+    width: 449px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 10px;
+    /* background-color: rebeccapurple; */
 }

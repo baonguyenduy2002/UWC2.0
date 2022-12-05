@@ -10,8 +10,9 @@ import taskList from "./icons/taskList.svg";
 import calendar from "./icons/calendar.svg";
 import arrowDropDown from "./icons/arrowDropDown.svg";
 import arrowUpward from "./icons/arrowUpward.svg";
-import activeBox from "./icons/activeBox.svg"
-import inactiveBox from "./icons/inactiveBox.svg"
+import activeBox from "./icons/activeBox.svg";
+import inactiveBox from "./icons/inactiveBox.svg";
+import addEmployee from "./icons/addEmployee.svg";
 
 import home_onHover from "./icons_onHover/home_onHover.svg";
 import employee_onHover from "./icons_onHover/employee_onHover.svg";
@@ -22,6 +23,7 @@ import notification_onHover from "./icons_onHover/notification_onHover.svg";
 import setting_onHover from "./icons_onHover/setting_onHover.svg";
 import taskList_onHover from "./icons_onHover/taskList_onHover.svg";
 import calendar_onHover from "./icons_onHover/calendar_onHover.svg";
+import addEmployee_onHover from "./icons_onHover/addEmployee_onHover.svg";
 
 import home_onFocus from "./icons_onFocus/home_onFocus.svg";
 import employee_onFocus from "./icons_onFocus/employee_onFocus.svg";
@@ -182,5 +184,14 @@ export const iconsActiveBox = [
 		icon_onFocus: null,
 		icon_onHover: null,
 		name: "inactiveBox"
+	},
+]
+
+export const iconsAddEmployee = [
+	{
+		icon: addEmployee,
+		icon_onFocus: null,
+		icon_onHover: addEmployee_onHover,
+		name: "addEmployee"
 	},
 ]
