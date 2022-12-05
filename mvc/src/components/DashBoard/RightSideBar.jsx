@@ -14,10 +14,10 @@ export default function RightSideBar(){
                     alt = "My Avatar"
                 />
                 <div className = "MyInfo">
-                    <h1 class = "MyName">
+                    <h1 className = "MyName">
                         Rimsha Khan
                     </h1>
-                    <div class = "MyTitle">
+                    <div className = "MyTitle">
                         Back Officer
                     </div> 
                 </div>

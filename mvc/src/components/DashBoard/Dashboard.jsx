@@ -64,6 +64,6 @@ export default function Dashboard(){
     )
 }
 
-function MCPsTag(...mcp){
-    return <div className="MCPsTag">test</div>
+function MCPsTag(input){
+    return <div key={input.name} className = "MCPsTag">test</div>
 }
