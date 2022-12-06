@@ -15,7 +15,7 @@ function DropDownMenu(props) {
     setIsOpen(false);
   };
 
-  const doHandleChange = () => handleChange();
+  const doHandleChange = (bool) => handleChange(bool);
 
   return (
     <div className="DropDownContainer">
@@ -37,7 +37,9 @@ function DropDownMenu(props) {
               <li
                 onClick={() => {
                   onOptionClicked(option);
-                  doHandleChange();
+                  option == "MCPs Management"
+                    ? doHandleChange(true)
+                    : doHandleChange(false);
                 }}
                 key={Math.random()}
                 style={

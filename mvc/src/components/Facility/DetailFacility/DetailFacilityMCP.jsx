@@ -1,9 +1,8 @@
 import React from "react";
 import ProgressBar from "../ProgressBar/index";
-
 import "./DetailFacility.css";
 
-function DetailFacility(props) {
+const DetailFacilityMCP = (props) => {
   return (
     <div className="DetailInfor">
       <h2 id="McpName">{props.name}</h2>
@@ -21,9 +20,9 @@ function DetailFacility(props) {
       >
         <ProgressBar status={props.status} size="big" />
       </div>
-      <div className="McpMap"></div>
+      <div className="Map"></div>
     </div>
   );
-}
+};
 
-export default DetailFacility;
+export default DetailFacilityMCP;

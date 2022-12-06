@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from "../SearchBar";
 import DropDownMenu from "../Facility/DropDownMenu/index";
 import AddButton from "../Facility/AddButton";
-import DetailFacility from "../Facility/DetailFacility/index";
+import DetailFacilityMCP from "../Facility/DetailFacility/DetailFacilityMCP";
 import MCPTag from "../Facility/MCPTag/index";
 
 import "./FacilityMCP.css";
@@ -110,7 +110,7 @@ const FacilityMCP = (props) => {
       <div className="List">
         <div className="DropDownMenu">
           <DropDownMenu
-            options={["Vehicles Management", "MCPs Management"]}
+            options={["MCPs Management", "Vehicles Management"]}
             handleChange={handleChange}
           />
         </div>
@@ -137,13 +137,13 @@ const FacilityMCP = (props) => {
         </div>
       </div>
       <div className="ShowDetail">
-        <DetailFacility
+        <DetailFacilityMCP
           id={mcpData[0].id}
           name={mcpData[0].name}
           area={mcpData[0].area}
           location={mcpData[0].location}
           status={mcpData[0].status}
-        ></DetailFacility>
+        ></DetailFacilityMCP>
       </div>
     </div>
   );

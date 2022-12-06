@@ -118,7 +118,7 @@
 /* --------------- */
 /* Vehicles Detail */
 
-/* #VehicleName {
+#VehicleName {
     position: absolute;
     top: 30px;
     left: 35px;
@@ -290,4 +290,4 @@
     display: flex;
     align-items: center;
     color: #fff;
-} */
+}
