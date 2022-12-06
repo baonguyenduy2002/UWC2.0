@@ -2,8 +2,6 @@ import { React, useState } from "react";
 import FacilityVehicle from "../../../../components/FacilityVehicle/FacilityVehicle";
 import FacilityMCP from "../../../../components/FacilityMCP/FacilityMCP";
 
-import "./Facility.css";
-
 function Facility() {
   const [changeState, setChange] = useState(true);
   const handleChange = () => {

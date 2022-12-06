@@ -11,17 +11,17 @@ function EmployeeCard(props) {
             </div>
             <div className="BasicInfo">
                 <h3 style={{ fontSize: 20, margin: 0, width: 'fit-content' }}>{name}</h3>
-                <p style= {{ fontSize: 20, margin: 0, width: 'fit-content' }}>{type}</p>
-                <p style= {{ fontSize: 20, margin: 0, width: 'fit-content' }}><b>ID:</b> #{id}</p>
-                <p style= {{ fontSize: 20, margin: 0, width: 'fit-content' }}>{workingStatus ? 'Working':"Not Working"}</p>
+                <p>{type}</p>
+                <p><b>ID:</b> #{id}</p>
+                <p>{workingStatus ? 'Working':"Not Working"}</p>
             </div>
             <div className="CurrentTaskTitle">
                 <h4 style={{margin: 0, fontSize: '20px', width: 'fit-content' }}>Working Area:</h4>
                 <h4 style={{margin: 0, fontSize: '20px', width: 'fit-content' }}>Vehicle:</h4>
             </div>
             <div className="CurrentTaskContent">
-                <p style={{margin: 0, fontSize: '20px', width: 'fit-content' }}>Area 1</p>
-                <p style={{margin: 0, fontSize: '20px', width: 'fit-content' }}>#CH12</p>
+                <p>Area 1</p>
+                <p>#CH12</p>
             </div>
         </div>
     );

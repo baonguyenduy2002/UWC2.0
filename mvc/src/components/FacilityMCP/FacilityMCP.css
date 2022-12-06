@@ -51,22 +51,6 @@
     opacity: 0.8;
 }
 
-.VehiclesStatus {
-    position: absolute;
-    left: 14px;
-    top: 150px;
-    width: fit-content;
-
-    font-family: 'Poppins';
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-
-    color: #315C57;
-
-    opacity: 0.8;
-}
-
 .Line {
     position: absolute;
     /* top: 165px; */

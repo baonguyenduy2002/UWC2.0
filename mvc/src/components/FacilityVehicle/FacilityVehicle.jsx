@@ -2,11 +2,11 @@ import React from "react";
 import SearchBar from "../SearchBar/index";
 import DropDownMenu from "../Facility/DropDownMenu/index";
 import AddButton from "../Facility/AddButton/index";
-import DetailFacility from "../Facility/DetailFacility/index";
+import DetailVehicle from "../Facility/DetailVehicle/index";
 import VehicleTag from "../Facility/VehicleTag/index";
 import { iconsActiveBox } from "../../assets/index";
 
-import "./FacilityVehicle";
+import "./FacilityVehicle.css";
 
 const MCPs = [
   {
@@ -61,7 +61,7 @@ const FacilityVehicle = (props) => {
       <div className="List">
         <div className="DropDownMenu">
           <DropDownMenu
-            options={["MCPs Management", "Vehicles Management"]}
+            options={["Vehicles Management", "MCPs Management"]}
             handleChange={handleChange}
           />
         </div>
@@ -90,13 +90,15 @@ const FacilityVehicle = (props) => {
         </div>
       </div>
       <div className="ShowDetail">
-        <DetailFacility
-          id={MCPs[0].id}
-          name={MCPs[0].name}
-          area={MCPs[0].area}
-          location={MCPs[0].location}
-          status={MCPs[0].status}
-        ></DetailFacility>
+        <DetailVehicle
+          id='#CH11'
+          name='Truck 1'
+          status='Active'
+          route={['MCP 1', 'MCP 2', 'MCP 3']}
+          capacity={5000}
+          curFuel={71}
+          totalFuel={221}
+        ></DetailVehicle>
       </div>
     </div>
   );

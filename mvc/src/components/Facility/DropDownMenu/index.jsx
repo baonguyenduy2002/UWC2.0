@@ -5,6 +5,7 @@ import "./Dropdownmenu.css";
 
 function DropDownMenu(props) {
   const { options, handleChange } = props;
+ 
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
@@ -12,7 +13,10 @@ function DropDownMenu(props) {
 
   const onOptionClicked = (value) => () => {
     setSelectedOption(value);
+    console.log(value);
+    console.log(selectedOption);
     setIsOpen(false);
+    doHandleChange();
   };
 
   const doHandleChange = () => handleChange();
@@ -35,10 +39,10 @@ function DropDownMenu(props) {
           <ul className="DropDownList">
             {options.map((option) => (
               <li
-                onClick={() => {
-                  onOptionClicked(option);
-                  doHandleChange();
-                }}
+                onClick={
+                  onOptionClicked(option)
+                  
+                }
                 key={Math.random()}
                 style={
                   selectedOption === option

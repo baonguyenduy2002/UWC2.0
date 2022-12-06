@@ -1,4 +1,4 @@
-.ManageContainer {
+/* .ManageContainer {
     position: absolute;
     width: 1357px;
     height: 958px;
@@ -33,28 +33,12 @@
     left: 14px;
     height: 50.5px;
     width: 325px;
-}
-
-.TotalMCPs {
-    position: absolute;
-    left: 338.17px;
-    top: 87px;
-    width: 90px;
-
-    font-family: 'Poppins';
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-
-    color: #315C57;
-
-    opacity: 0.8;
-}
+} */
 
 .VehiclesStatus {
     position: absolute;
     left: 14px;
-    top: 150px;
+    top: 170px;
     width: fit-content;
 
     font-family: 'Poppins';
@@ -67,16 +51,15 @@
     opacity: 0.8;
 }
 
-.Line {
+/* .Line {
     position: absolute;
-    /* top: 165px; */
     top: 150px;
     height: 2px;
     width: 466px;
     opacity: 0.2;
     background-color: #315C57;
     padding: 0;
-}
+} */
 
 .VehiclesSrollList {
     position: relative;
@@ -90,25 +73,14 @@
     /* background-color: rebeccapurple; */
 }
 
-.MCPsSrollList {
-    position: relative;
-    top: 180px;
-    left: 9px;
-    height: 720px;
-    width: 449px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-radius: 10px;
-}
-
-.Addbutton {
+/* .Addbutton {
     position: absolute;
     height: fit-content;
     width: fit-content;
     left: 290px;
     top: 910px;
 
-}
+} */
 
 .ShowDetail {
     position: absolute;
@@ -120,11 +92,3 @@
     margin-bottom: 4px;
 }
 
-.McpTag {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-    left: 15px;
-}

@@ -1,6 +1,6 @@
 import React from "react";
 import RemoveEmployeeButton from "../RemoveEmployee/index";
-import { iconsEmployee } from "../../assets/index";
+import { iconsEmployee } from "../../../assets/index";
 
 import "./PersonalInfo.css";
 
@@ -31,9 +31,9 @@ function PersonalInfo(props) {
                 </div>
             </div>
             <div className="Part2">
-                <div><b>Date of Birth:</b>{dob}</div>
-                <div><b>Address:</b>{address}</div>
-                <div><b>Email:</b>{email}</div>
+                <div><b>Date of Birth:&nbsp;</b>{dob}</div>
+                <div><b>Address:&nbsp;</b>{address}</div>
+                <div><b>Email:&nbsp;</b>{email}</div>
             </div>
             <div className="Part3">
 

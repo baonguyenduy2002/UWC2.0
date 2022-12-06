@@ -56,7 +56,7 @@ const mcpData = [
     name: "MCP 4",
     area: "Area 2",
     location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
-    status: 95,
+    status: 55,
   },
   {
     id: idList[4],
@@ -110,7 +110,7 @@ const FacilityMCP = (props) => {
       <div className="List">
         <div className="DropDownMenu">
           <DropDownMenu
-            options={["Vehicles Management", "MCPs Management"]}
+            options={["MCPs Management", "Vehicles Management"]}
             handleChange={handleChange}
           />
         </div>

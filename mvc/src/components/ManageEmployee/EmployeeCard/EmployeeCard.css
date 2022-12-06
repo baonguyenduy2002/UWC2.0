@@ -38,6 +38,13 @@
     width: fit-content;
 }
 
+.BasicInfo p {
+    margin: 0;
+    width: fit-content;
+    line-height: 30px;
+    font-size: 20px;
+}
+
 .CurrentTaskTitle {
     height: fit-content;
     width: fit-content;
@@ -46,4 +53,11 @@
 .CurrentTaskContent {
     height: fit-content;
     width: fit-content;
+}
+
+.CurrentTaskContent p {
+    margin: 0;
+    width: fit-content;
+    line-height: 30px;
+    font-size: 20px;
 }

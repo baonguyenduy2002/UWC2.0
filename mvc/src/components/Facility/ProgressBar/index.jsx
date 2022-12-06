@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./ProgressBar.css";
-import ProgressBarBase from "../ProgressBarBase";
+import ProgressBarBase from "../ProgressBarBase/index";
 
 const ProgressBar = (props) => {
   const [completedPart, setCompletedPart] = useState(0);
