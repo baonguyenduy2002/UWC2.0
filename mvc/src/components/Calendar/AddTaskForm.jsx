@@ -16,21 +16,23 @@ import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
 
 const initialFValues = {
-	taskId: 0,
+	id: 0,
+	imageUrl:
+		"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
 	des: undefined,
 	emId: undefined,
-	startDate: undefined,
-	endDate: undefined,
-	employeeName: undefined,
-	WorkingArea: undefined,
-	MCPs: [],
+	collector: undefined,
+	startDatetime: undefined,
+	endDatetime: undefined,
+	workingArea: undefined,
+	mcps: [],
 	vehicle: undefined,
 	route: false,
 	status: false,
 };
 
 export default function AddTaskForm(props) {
-	const { dialogState, setDialogState } = props;
+	const { dialogState, setDialogState, handleCreate } = props;
 	const handleCloseDialog = () => {
 		setDialogState(false);
 	};
@@ -62,23 +64,30 @@ export default function AddTaskForm(props) {
 		};
 	}
 
+	//------------------------useState--------------------
 	const option = employeeList.map(getOptionList);
-	const [startDate, setStartDate] = React.useState(startOfToday());
-	const [endDate, setEndDate] = React.useState(endOfToday());
+	const [startDate, setStartDate] = useState(startOfToday());
+	const [endDate, setEndDate] = useState(endOfToday());
 	const [values, setValues] = useState({
 		...initialFValues,
-		startDate: startDate,
-		endDate: endDate,
+		startDatetime: startDate,
+		endDatetime: endDate,
 	});
 
+	//--------------------Haddler
 	const handleChangeStartDate = (newValue) => {
 		setStartDate(newValue);
-		setValues({ startDate: newValue, ...values });
+
+		setValues({ startDatetime: startDate, ...values });
 	};
 
 	const handleChangeEndDate = (newValue) => {
 		setEndDate(newValue);
-		setValues({ endDate: newValue, ...values });
+		setValues({ endDatetime: endDate, ...values });
+	};
+
+	const doCreate = async (data) => {
+		handleCreate(data);
 	};
 
 	const MCPList = [
@@ -149,9 +158,10 @@ export default function AddTaskForm(props) {
 						id="des"
 						label="Task Description"
 						value={values.des}
-						onChange={(event, newValue) =>
-							setValues({ des: newValue, ...values })
-						}
+						onChange={(event, newValue) => {
+							setValues({ des: newValue, ...values });
+							console.log("checking:", values);
+						}}
 					/>
 					<Autocomplete
 						clearOnBlur={false}
@@ -164,7 +174,11 @@ export default function AddTaskForm(props) {
 						)}
 						value={values.emId}
 						onChange={(event, newValue) =>
-							setValues({ emID: newValue, ...values })
+							setValues({
+								emID: newValue.id,
+								collector: newValue.name,
+								...values,
+							})
 						}
 					/>
 					<LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -211,9 +225,9 @@ export default function AddTaskForm(props) {
 						renderInput={(params) => (
 							<TextField {...params} label="Area" placeholder="area" />
 						)}
-						value={values.WorkingArea}
+						value={values.workingArea}
 						onChange={(event, newValue) =>
-							setValues({ WorkingArea: newValue, ...values })
+							setValues({ workingArea: newValue, ...values })
 						}
 					/>
 					<Autocomplete
@@ -269,7 +283,11 @@ export default function AddTaskForm(props) {
 						<Button
 							variant="contained"
 							endIcon={<SendIcon />}
-							onClick={handleCloseDialog}
+							onClick={() => {
+								console.log("Add: ", values);
+								doCreate(values);
+								handleCloseDialog();
+							}}
 						>
 							Send
 						</Button>

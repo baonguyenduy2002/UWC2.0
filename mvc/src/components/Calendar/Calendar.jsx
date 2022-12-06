@@ -42,6 +42,7 @@ const TaskCalendar = () => {
 		setOpenAddPopup(true);
 	};
 
+	//--------------Calendar-------------
 	const days = eachDayOfInterval({
 		start: firstDayCurrentMonth,
 		end: endOfMonth(firstDayCurrentMonth),
@@ -72,6 +73,16 @@ const TaskCalendar = () => {
 		}
 	};
 
+	const handleCreate = async (data) => {
+		try {
+			api.taskController.createTask(data);
+			api.taskController.getTasks().then((res) => {
+				setTaskList(res);
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	//----------------------useEffect here--------------------------
 	useEffect(() => {
 		api.taskController.getTasks().then((res) => {
@@ -192,6 +203,7 @@ const TaskCalendar = () => {
 			<AddDialogs
 				openAddPopup={openAddPopup}
 				setOpenAddPopup={setOpenAddPopup}
+				handleCreate={handleCreate}
 			/>
 		</div>
 	);

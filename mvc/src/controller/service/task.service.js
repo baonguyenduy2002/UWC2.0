@@ -35,6 +35,7 @@ export const getTasks = () =>
 //-----------------------------------------Create new Task--------------------------
 export const createTask = (data) =>
 	new Promise((resolve, reject) => {
+		console.log("service: ", data);
 		if (!data.emId || !data.des) {
 			reject(new Error("Not enough information!"));
 		}
