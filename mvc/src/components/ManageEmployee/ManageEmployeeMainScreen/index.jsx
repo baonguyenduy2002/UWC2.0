@@ -5,19 +5,16 @@ import SearchBar from "../../SearchBar/index";
 import { iconsEmployee } from "../../../assets/index";
 import PersonalInfo from "../PersonalInfo/index";
 import AddEmployeeForm from "../AddEmployeeForm/index";
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
+
 
 import "./ManageEmployee.css"
 
 function ManageEmployeeMainScreen() {
   const [openInfoDialog, setOpenInfoDialog] = React.useState(false);
   const [openAddEmployee, setOpenAddEmployee] = React.useState(false);
-  // const [chosenEmployee, setChosenEmployee] = React.useState("");
 
   function handleInfoDialogOpen(value) {
     setOpenInfoDialog(true);
-    // setChosenEmployee(value);
   };
 
   function handleAddEmployeeOpen() {
@@ -82,5 +79,10 @@ function ManageEmployeeMainScreen() {
 		</div>
 	);
 }
+
+
+const ShowPersonal = (props) => {
+
+};
 
 export default ManageEmployeeMainScreen;

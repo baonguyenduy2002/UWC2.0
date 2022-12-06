@@ -133,7 +133,6 @@ function AddEmployeeForm(props) {
         address:"",
         email:""
     });
-    console.log(values);
     const handleClose = () => {
         setOpenAddEmployee(false);
     };
