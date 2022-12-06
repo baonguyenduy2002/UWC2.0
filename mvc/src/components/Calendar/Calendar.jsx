@@ -18,6 +18,7 @@ import {
 } from "date-fns";
 import "./Calendar.css";
 import AddDialogs from "./Dialog";
+import EditDialogs from "./EditLog";
 
 import api from "../../controller/api/route";
 
@@ -37,7 +38,8 @@ const TaskCalendar = () => {
 	const [selectedDay, setSelectedDay] = useState(today);
 	const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
 	const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
-	const [openAddPopup, setOpenAddPopup] = React.useState(false);
+	const [openAddPopup, setOpenAddPopup] = useState(false);
+
 	const handleOpenAddPopup = () => {
 		setOpenAddPopup(true);
 	};
@@ -77,6 +79,17 @@ const TaskCalendar = () => {
 		try {
 			api.taskController.createTask(data);
 			api.taskController.getTasks().then((res) => {
+				setTaskList(res);
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const handleEdit = async (id, data) => {
+		try {
+			await api.taskController.updateTask(id, data);
+			await api.taskController.getTasks().then((res) => {
 				setTaskList(res);
 			});
 		} catch (error) {
@@ -191,6 +204,7 @@ const TaskCalendar = () => {
 										task={task}
 										key={task.id}
 										handleRemove={handleRemove}
+										handleEdit={handleEdit}
 									/>
 								))
 							) : (
@@ -210,9 +224,18 @@ const TaskCalendar = () => {
 };
 
 const Meeting = (props) => {
+	const [openEditPopup, setEditPopup] = useState(false);
+
 	const startDateTime = parseISO(props.task.startDatetime);
 	const endDateTime = parseISO(props.task.endDatetime);
 	const doHandleRemove = () => props.handleRemove(props.task.id);
+
+	const doHandleUpdate = (data) => props.handleEdit(props.task.id, data);
+
+	const doOpenEditPopup = () => {
+		setEditPopup(true);
+	};
+
 	return (
 		<li className="Task">
 			<div className="EmployeeInfoField">
@@ -255,7 +278,11 @@ const Meeting = (props) => {
 						<div className="MenuBox">
 							<Menu.Item>
 								{({ active }) => (
-									<button className={active ? "MenuItemActive" : "MenuItem"}>
+									<button
+										className={active ? "MenuItemActive" : "MenuItem"}
+										onClick={doOpenEditPopup}
+										task={props.task}
+									>
 										Edit
 									</button>
 								)}
@@ -275,6 +302,12 @@ const Meeting = (props) => {
 					</Menu.Items>
 				</Transition>
 			</Menu>
+			<EditDialogs
+				doHandleUpdate={doHandleUpdate}
+				openEditPopup={openEditPopup}
+				setEditPopup={setEditPopup}
+				task={props.task}
+			/>
 		</li>
 	);
 };
