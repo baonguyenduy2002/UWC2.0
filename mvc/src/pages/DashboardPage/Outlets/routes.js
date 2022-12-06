@@ -12,7 +12,7 @@ const routes = [
 	{ path: "employees", element: ManageEmployee },
 	{ path: "facility", element: Facility },
 	{ path: "chat", element: Chat },
-	{ path: "noti", element: Notification },
+	{ path: "notification", element: Notification },
 	{ path: "setting", element: Setting },
 	{ path: "*", element: Home },
 ];
