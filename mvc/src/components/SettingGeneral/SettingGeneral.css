@@ -1,0 +1,178 @@
+.GeneralSetting {
+    position: absolute;
+    width: 1209px;
+    height: 215px;
+    left: 200px;
+    top: 45px;
+}
+
+.GHeader {
+    position: relative;
+    left: 0%;
+    right: 78.66%;
+    top: 0%;
+    bottom: 77.1%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #27104E;
+}
+
+.LanguageSetting {
+    position: absolute;
+    left: 0%;
+    right: 50%;
+    top: 15%;
+    bottom: 0%;
+}
+
+.GHeader1 {
+    position: absolute;
+    left: 1%;
+    right: 50%;
+    top: 7.5%;
+    bottom: 75%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #27104E;
+}
+
+.Dropdown {
+    position: absolute;
+    width: 517px;
+    height: 95px;
+    left: 0%;
+    top: 30%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #315C57;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    background: #93CAAC;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border: 0;
+}
+
+.Dropdown-list {
+    position: absolute;
+    width: 517px;
+    height: 190px;
+    left: 0%;
+    top: 85%;
+}
+
+
+
+.Dropdown-list-item {
+    position: relative;
+    width: 517px;
+    height: 95px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #315C57;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.Dropdown-list-item:hover {
+    background: #93CAAC;
+}
+
+.ImgDropdown {
+    position: relative;
+    top: 52.5%;
+    left: 30%;
+}
+
+.item1 {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.item2 {
+    border-radius: 0px 0px 10px 10px;
+}
+
+.Logout {
+    position: absolute;
+    left: 57%;
+    right: 0%;
+    top: 15%;
+    bottom: 0%;
+}
+
+.GHeader2 {
+    position: absolute;
+    left: 1%;
+    right: 50%;
+    top: 7.5%;
+    bottom: 75%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #27104E;
+}
+
+.LogoutButton {
+    position: absolute;
+    width: 517px;
+    height: 95px;
+    left: 0%;
+    top: 30%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #315C57;
+
+    background: #EAF9F3;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.LogoutIcon {
+    position: relative;
+    top: 42.75%;
+    left: 42.5%;
+}

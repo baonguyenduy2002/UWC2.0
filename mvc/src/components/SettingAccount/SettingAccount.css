@@ -1,0 +1,144 @@
+.AccountSetting {
+    position: absolute;
+    width: 1216px;
+    height: 656px;
+    left: 200px;
+    top: 298px;
+}
+
+.AHeaderMain {
+    position: relative;
+    left: 0%;
+    right: 78.66%;
+    top: 0%;
+    bottom: 77.1%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #27104E;
+}
+
+.AHeader {
+    position: relative;
+    left: 0%;
+    right: 0%;
+    top: -2.5%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+
+    color: #27104E;
+}
+
+.Textfield-input {
+    position: relative;
+    width: 500px;
+    height: 65px;
+    top: 5%;
+
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    padding-left: 2.5%;
+
+    color: #EAF9F3;
+    background: #315C57;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.FirstName {
+    position: absolute;
+    width: 517px;
+    height: 114px;
+    left: 56.65%;
+    top: 5.5%;
+}
+
+.LastName {
+    position: absolute;
+    width: 517px;
+    height: 114px;
+    left: 56.65%;
+    top: 24.5%;
+}
+
+.Email {
+    position: absolute;
+    width: 517px;
+    height: 114px;
+    left: 56.65%;
+    top: 62.5%;
+}
+
+.Password {
+    position: absolute;
+    width: 517px;
+    height: 114px;
+    left: 56.65%;
+    top: 43.5%;
+}
+
+.Username {
+    position: absolute;
+    width: 517px;
+    height: 114px;
+    left: 0%;
+    top: 43.5%;
+}
+
+.DateofBirth {
+    position: absolute;
+    width: 517px;
+    height: 114px;
+    left: 0%;
+    top: 62.5%;
+}
+
+.Address {
+    position: absolute;
+    width: 1152px;
+    height: 114px;
+    left: 0%;
+    top: 81.5%;
+
+}
+
+.ProfilePicture {
+    position: absolute;
+    width: 240px;
+    height: 200px;
+    left: 11.5%;
+    top: 10%;
+}
+
+.txt7 {
+    width: 101.75%;
+}
+
+.EditIcon {
+    position: relative;
+    left: 42.5%;
+    bottom: 45%;
+}
+
+.ic7 {
+    left: 51.25%;
+}

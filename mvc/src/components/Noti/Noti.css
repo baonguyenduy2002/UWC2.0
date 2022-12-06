@@ -1,0 +1,139 @@
+.Noti {
+    position: relative;
+    width: 1340px;
+    height: 895px;
+}
+
+.NHeader {
+    position: absolute;
+    left: 1.57%;
+    right: 79.18%;
+    top: 0%;
+    bottom: 95%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #27104E;
+}
+
+.Noti-noti {
+    position: relative;
+    width: 1340px;
+    height: 95px;
+
+    background: #EAF9F3;
+    box-shadow: 0px 4px 4px rgba(152, 84, 203, 0.1);
+    border-radius: 10px;
+}
+
+.n1 {
+    left: 0%;
+    right: 0%;
+    top: 5%;
+    bottom: 0%;
+}
+
+.n2 {
+    left: 0%;
+    right: 0%;
+    top: 8.5%;
+    bottom: 0%;
+}
+
+.n3 {
+    left: 0%;
+    right: 0%;
+    top: 12%;
+    bottom: 0%;
+}
+
+.n4 {
+    left: 0%;
+    right: 0%;
+    top: 15.5%;
+    bottom: 0%;
+}
+
+.n5 {
+    left: 0%;
+    right: 0%;
+    top: 19%;
+    bottom: 0%;
+}
+
+.n6 {
+    left: 0%;
+    right: 0%;
+    top: 22.5%;
+    bottom: 0%;
+}
+
+.n7 {
+    left: 0%;
+    right: 0%;
+    top: 26%;
+    bottom: 0%;
+}
+
+.ImgContainer {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    top: 12.5%;
+    left: 1.5%;
+    align-items: center;
+}
+
+.TxtContainer {
+    position: relative;
+    height: 50px;
+    width: 900px;
+    left: 10%;
+    top: -50%;
+    border-radius: nullpx;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 125%;
+
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}
+
+.MarkContainer {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 97.5%;
+    bottom: 67.5%;
+}
+
+.TimeContainer {
+    position: relative;
+    height: 50px;
+    width: 250px;
+    left: 78.5%;
+    bottom: 102.5%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 125%;
+
+    display: flex;
+    align-items: center;
+
+    color: #315C57;
+    border-radius: nullpx;
+}

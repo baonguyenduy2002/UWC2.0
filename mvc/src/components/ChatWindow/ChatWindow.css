@@ -1,0 +1,116 @@
+.ChatWindow {
+    position: relative;
+    width: 895px;
+    height: 902px;
+    left: 22.5%;
+    bottom: 25%;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 20px 20px 0px;
+}
+
+.ChatFriend {
+    position: realtive;
+    width: 895px;
+    height: 80px;
+
+
+
+    color: #EAF9F3;
+
+    background: #315C57;
+}
+
+.ChatFriend-username {
+    position: relative;
+    width: 132px;
+    height: 20px;
+    left: 12.5%;
+    top: 35%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    align-items: center;
+
+    color: #EAF9F3;
+}
+
+.ChatFriend-avatar {
+    position: relative;
+    left: 2.5%;
+    bottom: 15%;
+    display: flex;
+    color: #EAF9F3;
+}
+
+.ChatFriend-detail {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    bottom: 70%;
+    left: 47.5%;
+}
+
+.ChatView {
+    position: relative;
+    width: 895px;
+    height: 740px;
+
+    overflow-y: scroll;
+
+    background: #FFFFFF;
+    border-radius: 0px;
+}
+
+.ChatInput {
+    position: relative;
+    top: 0.25%;
+    width: 895px;
+    height: 80px;
+
+    background: #315C57;
+    border-radius: 0px 0px 20px 0px;
+}
+
+.ChatInput-field {
+    position: relative;
+    width: 771px;
+    height: 40px;
+    top: 25%;
+    left: 5%;
+
+    background: #FCFBFF;
+    border-radius: 20px;
+}
+
+.ChatInput-field-default-text {
+    position: relative;
+    width: 144px;
+    height: 16px;
+
+    left: 2.5%;
+    top: 27.5%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    color: #7B6E94;
+}
+
+.SendIcon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+    left: 45%;
+    bottom: 25%;
+}

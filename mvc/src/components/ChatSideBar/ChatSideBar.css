@@ -1,0 +1,158 @@
+.ChatSideBar {
+    position: relative;
+    width: 346px;
+    height: 902px;
+    right: 20%;
+    top: 25%;
+    overflow-y: scroll;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 0px 0px 20px;
+}
+
+.CHeader {
+    position: relative;
+    width: 346px;
+    height: 80px;
+    left: 0%;
+    top: 0%;
+    color: #EAF9F3;
+
+    background: #315C57;
+}
+
+.TxtHeaderContainer {
+    position: relative;
+    width: 80px;
+    height: 40px;
+
+    top: 25%;
+    left: 10%;
+    font-family: 'Robot';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.SearchBar {
+    position: relative;
+    width: 306px;
+    height: 48px;
+    left: 6.25%;
+    top: 1.5%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+
+    color: #7B6E94;
+    background: #FCFBFF;
+    border-radius: 20px;
+}
+
+.SearchIcon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    left: 7.5%;
+    bottom: 50%
+}
+
+.FriendList {
+    position: relative;
+    width: 333px;
+    height: 736px;
+    left: 2%;
+    top: 2%;
+    overflow-y: scroll;
+}
+
+.Friend-container {
+    position: relative;
+    width: 330px;
+    height: 88px;
+    left: 0.5%;
+    background: #EAF9F3;
+    border-radius: 20px;
+}
+
+.f1 {
+    top: 0%;
+}
+
+.f2 {
+    top: 2.5%;
+}
+
+.f3 {
+    top: 5%;
+}
+
+.f4 {
+    top: 7.5%;
+}
+
+.f5 {
+    top: 10%;
+}
+
+.f6 {
+    top: 12.5%;
+}
+
+.f7 {
+    top: 15%;
+}
+
+.Friend-container-avatar {
+    position: relative;
+    right: 37.5%;
+    bottom: 22.5%;
+}
+
+.Friend-container-username {
+    position: relative;
+    width: 104px;
+    height: 20px;
+    left: 25%;
+    top: 25%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.Friend-container-msg {
+    position: relative;
+    width: 52px;
+    height: 20px;
+    left: 25%;
+    top: 30%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+    display: flex;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 0.5);
+
+}
