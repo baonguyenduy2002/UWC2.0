@@ -175,7 +175,7 @@ export default function AddTaskForm(props) {
                                 clearOnBlur={false}
                                 placeholder='time'
                                 id="time"
-                                label="End Day Time"
+                                label="End Date Time"
                                 value={endDate}
                                 onChange={handleChangeEndDate}
                                 renderInput={(params) => <TextField {...params} sx={{ width: 300, marginTop: 1, marginBottom: 1 }} />}
