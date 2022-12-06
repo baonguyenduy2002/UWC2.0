@@ -36,19 +36,19 @@
 } */
 
 .VehiclesStatus {
-    position: absolute;
-    left: 14px;
-    top: 150px;
-    width: fit-content;
+	position: absolute;
+	left: 14px;
+	top: 150px;
+	width: fit-content;
 
-    font-family: 'Poppins';
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
+	font-family: "Poppins";
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 30px;
 
-    color: #315C57;
+	color: #315c57;
 
-    opacity: 0.8;
+	opacity: 0.8;
 }
 
 /* .Line {
@@ -62,15 +62,15 @@
 } */
 
 .VehiclesSrollList {
-    position: relative;
-    top: 200px;
-    left: 9px;
-    height: 700px;
-    width: 449px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-radius: 10px;
-    /* background-color: rebeccapurple; */
+	position: relative;
+	top: 200px;
+	left: 9px;
+	height: 700px;
+	width: 449px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border-radius: 10px;
+	/* background-color: rebeccapurple; */
 }
 
 /* .Addbutton {
@@ -91,4 +91,3 @@
     margin-top: 4px;
     margin-bottom: 4px;
 } */
-

@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import SearchBar from "../SearchBar";
 import DropDownMenu from "../Facility/DropDownMenu/index";
 import AddButton from "../Facility/AddButton";
@@ -35,7 +35,7 @@ const FacilityMCP = (props) => {
 					{" "}
 					<SearchBar />{" "}
 				</div>
-				<p className="TotalMCPs">Total: </p>
+				<p className="TotalMCPs">Total: {mcpData.length}</p>
 				<hr className="Line" />
 				<div className="MCPsSrollList">
 					{mcpData &&

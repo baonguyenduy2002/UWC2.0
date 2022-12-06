@@ -4,31 +4,29 @@ import { iconsActiveBox } from "../../../assets/index";
 import "./VehicleTag.css";
 
 const VehicleTag = (props) => {
-  return (
-    <div className="TagContainer">
-      <h3 className="VehicleTagName">{props.name}</h3>
-      <p className="VehicleTagId">Truck ID: {props.id}</p>
-      <p className="VehicleTagRoute">
-        Route: {props.route.map((item) => `${item}, `)}
-      </p>
-      <div className="VehiclesTagStatus">
-        <img
-          src={
-            props.status === "Active"
-              ? iconsActiveBox[0].icon
-              : iconsActiveBox[1].icon
-          }
-          alt=""
-          style={{
-            position: "absolute",
-            top: 15,
-            left: 10,
-          }}
-        ></img>
-        &nbsp;{props.status}
-      </div>
-    </div>
-  );
+	const { id, name, route, status, idx, setVehicleIdx } = props;
+
+	return (
+		<div className="TagContainer" onClick={() => setVehicleIdx(idx)}>
+			<h3 className="VehicleTagName">{name}</h3>
+			<p className="VehicleTagId">Truck ID: {id}</p>
+			<p className="VehicleTagRoute">
+				Route: {route.map((mcp) => `${mcp.name}, `)}
+			</p>
+
+			<div className="VehiclesTagStatus">
+				<img
+					src={
+						status === "active"
+							? iconsActiveBox[0].icon
+							: iconsActiveBox[1].icon
+					}
+					alt=""
+				></img>
+				&nbsp;{props.status}
+			</div>
+		</div>
+	);
 };
 
 export default VehicleTag;
