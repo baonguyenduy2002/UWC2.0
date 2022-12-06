@@ -13,6 +13,7 @@ const vehicleData = [
     id: "CH11",
     name: "Truck 1",
     route: ["MCP 1", "MCP 2", "MCP 3"],
+    capacity: 5000,
     fuel: 70,
     status: true,
   },
@@ -20,6 +21,7 @@ const vehicleData = [
     id: "CH12",
     name: "Truck 2",
     route: ["MCP 1", "MCP 2", "MCP 3"],
+    capacity: 5000,
     fuel: 70,
     status: false,
   },
@@ -27,6 +29,7 @@ const vehicleData = [
     id: "CH13",
     name: "Truck 3",
     route: ["MCP 1", "MCP 2", "MCP 3"],
+    capacity: 5000,
     fuel: 70,
     status: true,
   },
@@ -34,6 +37,7 @@ const vehicleData = [
     id: "CH14",
     name: "Truck 4",
     route: ["MCP 1", "MCP 2", "MCP 3"],
+    capacity: 5000,
     fuel: 70,
     status: false,
   },
@@ -41,6 +45,7 @@ const vehicleData = [
     id: "CH15",
     name: "Truck 5",
     route: ["MCP 1", "MCP 2", "MCP 3"],
+    capacity: 5000,
     fuel: 70,
     status: true,
   },
@@ -48,6 +53,7 @@ const vehicleData = [
     id: "CH16",
     name: "Truck 6",
     route: ["MCP 1", "MCP 2", "MCP 3"],
+    capacity: 5000,
     fuel: 70,
     status: false,
   },
@@ -93,6 +99,7 @@ const FacilityVehicle = (props) => {
         <DetailFacilityVehicle
           id={vehicleData[0].id}
           name={vehicleData[0].name}
+          capacity={vehicleData[0].capacity}
           route={vehicleData[0].route}
           fuel={vehicleData[0].fuel}
           status={vehicleData[0].status}

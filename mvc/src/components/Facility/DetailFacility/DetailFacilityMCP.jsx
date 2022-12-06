@@ -10,7 +10,7 @@ const DetailFacilityMCP = (props) => {
       <p id="McpId">{props.id}</p>
       <h3 id="Location">Location:</h3>
       <p id="McpLocation">{props.location}</p>
-      <h3 id="Status">Status:</h3>
+      <h3 id="Status-MCP">Status:</h3>
       <div
         style={{
           position: "absolute",

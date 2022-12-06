@@ -71,7 +71,7 @@
     top: 188px;
 }
 
-#Status {
+#Status-MCP {
     margin: 0;
     width: fit-content;
     height: fit-content;
@@ -198,25 +198,7 @@
 
     position: absolute;
     left: 35px;
-    top: 200px;
-}
-
-#VehicleFuel {
-    margin: 0;
-    width: 642px;
-    height: fit-content;
-    font-family: 'Poppins';
-
-    color: #315C57;
-    font-family: 'Poppins';
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 42px;
-
-    text-align: left;
-    position: absolute;
-    left: 180px;
-    top: 201px;
+    top: 315px;
 }
 
 #Route {
@@ -233,7 +215,7 @@
 
     position: absolute;
     left: 35px;
-    top: 270px;
+    top: 220px;
 }
 
 #VehicleRoute {
@@ -251,7 +233,7 @@
     text-align: left;
     position: absolute;
     left: 250px;
-    top: 271px;
+    top: 221px;
 }
 
 #Status {
