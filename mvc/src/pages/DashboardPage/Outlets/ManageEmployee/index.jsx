@@ -2,7 +2,7 @@ import React from "react";
 import EmployeeCard from "../../../../components/EmployeeCard/index";
 import AddEmployeeButton from "../../../../components/AddEmployeeButton/index";
 import SearchBar from "../../../../components/SearchBar/index";
-import { iconsAddEmployee } from "../../../../assets/index";
+import { iconsEmployee } from "../../../../assets/index";
 
 import "./ManageEmployee.css"
 
@@ -35,7 +35,7 @@ function ManageEmployee() {
 		<div className="ManageEmployeeContainer">
       <h1 className="TitlePage">Employee</h1>
       <div className="AddEmployeeButton">
-        <AddEmployeeButton item={iconsAddEmployee[0]} />
+        <AddEmployeeButton item={iconsEmployee[0]} />
       </div>
       <div className="SearchBar-Employee">
         <SearchBar />
