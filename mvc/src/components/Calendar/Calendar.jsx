@@ -1,6 +1,5 @@
 import React from "react";
 import { Menu, Transition } from '@headlessui/react'
-import { Dialog } from '@headlessui/react'
 import { DotsVerticalIcon, PlusIcon } from '@heroicons/react/outline'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import {
@@ -18,7 +17,7 @@ import {
 } from 'date-fns'
 import { Fragment, useState } from 'react'
 import "./Calendar.css"
-
+import AddDialogs from "./Dialog";
 
 const meetings = [
   {
@@ -131,6 +130,10 @@ export default function TaskCalendar() {
   let selectedDayMeetings = meetings.filter((meeting) =>
     isSameDay(parseISO(meeting.startDatetime), selectedDay)
   )
+  const [openAddPopup, setOpenAddPopup] = React.useState(false);
+  const handleOpenAddPopup = () => {
+    setOpenAddPopup(true);
+  };
 
   return (
     <div className="CalendarPage">
@@ -217,6 +220,7 @@ export default function TaskCalendar() {
               <button
                 type="button"
                 className="AddTaskButton"
+                onClick = {handleOpenAddPopup}
               >
                 <PlusIcon className="ButtonIcon" aria-hidden="true" />
             </button>
@@ -233,6 +237,7 @@ export default function TaskCalendar() {
           </section>
         </div>
       </div>
+      <AddDialogs openAddPopup = {openAddPopup} setOpenAddPopup = {setOpenAddPopup} />{console.log(openAddPopup)}
     </div>
   )
 }
@@ -240,6 +245,7 @@ export default function TaskCalendar() {
 function Meeting({ meeting }) {
   let startDateTime = parseISO(meeting.startDatetime)
   let endDateTime = parseISO(meeting.endDatetime)
+ 
   return (
     <li className="Task">
       <div className= "EmployeeInfoField">

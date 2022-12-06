@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-
+import Mapbox from "../../../../components/Calendar/Map"
 import { logout } from "../../../../mock/controller/auth";
 
 function Setting() {
@@ -13,7 +13,7 @@ function Setting() {
 
 	return (
 		<div>
-			<div>Setting</div>
+			<Mapbox />
 			<button onClick={handleSubmit}>Logout</button>
 		</div>
 	);
