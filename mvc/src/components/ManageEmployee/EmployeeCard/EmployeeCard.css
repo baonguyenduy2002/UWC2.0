@@ -1,13 +1,14 @@
 .CardContainer {
     background-color: #fff;
     overflow: hidden;
-    width: 270px;
+    width: 290px;
     height: 190px;
     border-radius: 10px;
     padding: 20px;
     display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 15px;
+    grid-template-areas:
+    'Photo BasicInfo BasicInfo BasicInfo'
+    'Title Title content content';
     box-shadow: 0px 0px 15px -5px;
     transition: 0.5s;
     animation: ease-in;
@@ -31,11 +32,13 @@
 .Photo {
     height: fit-content;
     width: fit-content;
+    grid-area: Photo;
 }
 
 .BasicInfo {
     height: fit-content;
     width: fit-content;
+    grid-area: BasicInfo;
 }
 
 .BasicInfo p {
@@ -48,16 +51,25 @@
 .CurrentTaskTitle {
     height: fit-content;
     width: fit-content;
+    grid-area: Title;
+}
+.CurrentTaskTitle h4 {
+    display: flex;
+    justify-content: left;
+    margin: 0;
+    font-size: 20px;
+    width: 'fit-content'; 
 }
 
 .CurrentTaskContent {
     height: fit-content;
     width: fit-content;
+    grid-area: content;
 }
 
 .CurrentTaskContent p {
     margin: 0;
     width: fit-content;
-    line-height: 30px;
+    line-height: 28px;
     font-size: 20px;
 }

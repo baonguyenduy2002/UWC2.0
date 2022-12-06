@@ -1,0 +1,71 @@
+.AddEmployee-Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 750px;
+}
+
+.AddEmployee-Container input {
+    padding: 15px;
+    margin: 10px 0px;
+    width: 95%;
+}
+
+.AddEmployee-Container form {
+    background-color: #EAF9F3;
+    padding: 0px 60px 20px;
+    width: 100%;
+}
+
+.AddEmployee-Container h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.AddEmployee-Container button {
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    background-color: #FFF;
+    color: #315C57;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-left: 320px;
+}
+
+.FormInput-Employee {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.FormInput-Employee input {
+    border: none;
+}
+
+.FormInput-Employee label {
+    font-size: 20px;
+    font-weight: 600px;
+}
+
+.AddEmployee-Container button:hover{
+    background-color: #315C57;
+    color: #FFF;
+}
+
+.FormInput-Employee span {
+    font-size: 16px;
+    padding: 3px;
+    color: red;
+    display: none;
+}
+
+.FormInput-Employee input:invalid[focused="true"] {
+    border: 1px solid red;
+}
+
+.FormInput-Employee input:invalid[focused="true"] ~ span{
+    display: block;
+}
