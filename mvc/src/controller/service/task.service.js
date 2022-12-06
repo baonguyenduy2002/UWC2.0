@@ -6,6 +6,10 @@ let id = "T20";
 //-----------------------------------------Get one Task--------------------------
 export const getTask = (id) =>
 	new Promise((resolve, reject) => {
+		if (!taskData_temp) {
+			taskData_temp = taskData;
+		}
+
 		const task = taskData_temp[id];
 
 		if (!task) {
@@ -40,8 +44,7 @@ export const createTask = (data) =>
 		}
 		const words = id.split("T");
 		const number = parseInt(words[1]) + 1;
-		id = words[0] + number.toString();
-		id = "T" + id;
+		id = "T" + number.toString();
 		const newTask = {
 			id,
 			...data,

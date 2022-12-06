@@ -5,6 +5,9 @@ let id = "#1019";
 //-----------------------------------------Get one MCP--------------------------
 export const getMCP = (id) =>
 	new Promise((resolve, reject) => {
+		if (!mcps_tmp) {
+			mcps_tmp = mcpData;
+		}
 		const mcp = mcps_tmp[id];
 
 		if (!mcp) {
@@ -39,8 +42,7 @@ export const createMCP = (data) =>
 		}
 		const words = id.split("#");
 		const number = parseInt(words[1]) + 1;
-		id = words[0] + number.toString();
-		id = "#" + id;
+		id = "#" + number.toString();
 		const newTask = {
 			id,
 			...data,

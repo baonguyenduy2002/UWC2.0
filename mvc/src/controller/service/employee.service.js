@@ -11,6 +11,9 @@ const PHOTO_URL_BASE_LENGTH = 96;
 //-----------------------------------------Get one Employee--------------------------
 export const getEmployee = (id) =>
 	new Promise((resolve, reject) => {
+		if (!employeeData_temp) {
+			employeeData_temp = employeeData;
+		}
 		const employee = employeeData_temp[id];
 
 		if (!employee) {
@@ -47,7 +50,7 @@ export const createEmployee = (data) =>
 		//Id autoincrement
 		const words = id_temp.split("O");
 		const number = parseInt(words[1]) + 1;
-		id_temp = words[0] + number.toString();
+		id_temp = words[0] + "O" + number.toString();
 
 		// Get new profile photo
 		const word = photoURL_temp.slice(

@@ -1,11 +1,13 @@
 import { messageData } from "../data/message";
-import { employeeData } from "../data/employee";
 
 let msg_tmp;
 let id = "M1010";
 //-----------------------------------------Get one MCP--------------------------
 export const getMessage = (id) =>
 	new Promise((resolve, reject) => {
+		if (!msg_tmp) {
+			msg_tmp = messageData;
+		}
 		const mcp = msg_tmp[id];
 
 		if (!mcp) {
@@ -40,8 +42,7 @@ export const createMessage = (data) =>
 		}
 		const words = id.split("M");
 		const number = parseInt(words[1]) + 1;
-		id = words[0] + number.toString();
-		id = "M" + id;
+		id = "M" + number.toString();
 		const newMsg = {
 			id,
 			//Hard code receiver
