@@ -17,6 +17,8 @@ import {
 	startOfToday,
 } from "date-fns";
 import "./Calendar.css";
+import AddDialogs from "./Dialog";
+
 import api from "../../controller/api/route";
 
 function classNames(...classes) {
@@ -35,6 +37,10 @@ const TaskCalendar = () => {
 	const [selectedDay, setSelectedDay] = useState(today);
 	const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
 	const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
+	const [openAddPopup, setOpenAddPopup] = React.useState(false);
+	const handleOpenAddPopup = () => {
+		setOpenAddPopup(true);
+	};
 
 	const days = eachDayOfInterval({
 		start: firstDayCurrentMonth,
@@ -159,7 +165,11 @@ const TaskCalendar = () => {
 									{format(selectedDay, "MMM dd, yyy")}
 								</time>
 							</h2>
-							<button type="button" className="AddTaskButton">
+							<button
+								type="button"
+								className="AddTaskButton"
+								onClick={handleOpenAddPopup}
+							>
 								<PlusIcon className="ButtonIcon" aria-hidden="true" />
 							</button>
 						</div>
@@ -179,6 +189,10 @@ const TaskCalendar = () => {
 					</section>
 				</div>
 			</div>
+			<AddDialogs
+				openAddPopup={openAddPopup}
+				setOpenAddPopup={setOpenAddPopup}
+			/>
 		</div>
 	);
 };

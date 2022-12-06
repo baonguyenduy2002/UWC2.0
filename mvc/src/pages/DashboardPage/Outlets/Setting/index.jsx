@@ -13,7 +13,6 @@ function Setting() {
 
 	return (
 		<div>
-			<Mapbox />
 			<button onClick={handleSubmit}>Logout</button>
 		</div>
 	);
