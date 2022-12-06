@@ -8,6 +8,12 @@ import setting from "./icons/setting.svg";
 import search from "./icons/search.svg";
 import taskList from "./icons/taskList.svg";
 import calendar from "./icons/calendar.svg";
+import arrowDropDown from "./icons/arrowDropDown.svg";
+import arrowUpward from "./icons/arrowUpward.svg";
+import activeBox from "./icons/activeBox.svg";
+import inactiveBox from "./icons/inactiveBox.svg";
+import addEmployee from "./icons/addEmployee.svg";
+import removeEmployee from "./icons/removeEmployee.svg";
 
 import home_onHover from "./icons_onHover/home_onHover.svg";
 import employee_onHover from "./icons_onHover/employee_onHover.svg";
@@ -18,6 +24,8 @@ import notification_onHover from "./icons_onHover/notification_onHover.svg";
 import setting_onHover from "./icons_onHover/setting_onHover.svg";
 import taskList_onHover from "./icons_onHover/taskList_onHover.svg";
 import calendar_onHover from "./icons_onHover/calendar_onHover.svg";
+import addEmployee_onHover from "./icons_onHover/addEmployee_onHover.svg";
+import removeEmployee_onHover from "./icons_onHover/removeEmployee_onHover.svg";
 
 import home_onFocus from "./icons_onFocus/home_onFocus.svg";
 import employee_onFocus from "./icons_onFocus/employee_onFocus.svg";
@@ -72,7 +80,11 @@ export const icons = [
 		icon_onFocus: setting_onFocus,
 		name: "setting",
 	},
-	{ icon: search, icon_onHover: null, icon_onFocus: null, name: "search" },
+	{ 	icon: search, 
+		icon_onHover: null, 
+		icon_onFocus: null, 
+		name: "search" 
+	},
 	{
 		icon: taskList,
 		icon_onHover: taskList_onHover,
@@ -146,3 +158,48 @@ export const iconsTaskSideBar = [
 		name: "calendar",
 	},
 ];
+
+export const iconsDropDownMenu = [
+	{
+		icon: arrowDropDown,
+		icon_onFocus: null,
+		icon_onHover: null,
+		name: "arrowDropDown"
+	},
+	{
+		icon: arrowUpward,
+		icon_onFocus: null,
+		icon_onHover: null,
+		name: "arrowUpward"
+	},
+];
+
+export const iconsActiveBox = [
+	{
+		icon: activeBox,
+		icon_onFocus: null,
+		icon_onHover: null,
+		name: "activeBox"
+	},
+	{
+		icon: inactiveBox,
+		icon_onFocus: null,
+		icon_onHover: null,
+		name: "inactiveBox"
+	},
+]
+
+export const iconsEmployee = [
+	{
+		icon: addEmployee,
+		icon_onFocus: null,
+		icon_onHover: addEmployee_onHover,
+		name: "addEmployee"
+	},
+	{
+		icon: removeEmployee,
+		icon_onFocus: null,
+		icon_onHover: removeEmployee_onHover,
+		name: "removeEmployee"
+	},
+]

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Searchbar.css";
-import { searchicon } from "../../assets";
+import { icons } from "../../assets/index";
 
 const Searchbar = () => {
 	/*const handdleSubmit = (e) => e.preventDefault()
@@ -12,18 +12,16 @@ const Searchbar = () => {
     }*/
 
 	return (
-		<header>
-			<div className="search">
-				<input
-					className="search_term"
-					type="text"
-					placeholder="Type what you want"
-				/>
-				<button className="search_button">
-					<img src={searchicon} alt="search icon" />
-				</button>
-			</div>
-		</header>
+		<div className="search">
+			<input
+				className="search_term"
+				type="text"
+				placeholder="Search"
+			/>
+			<button className="search_button">
+				<img src={icons[7].icon} alt="search icon" />
+			</button>
+		</div>
 	);
 };
 

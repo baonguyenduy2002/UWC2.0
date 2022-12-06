@@ -1,7 +1,11 @@
 import React from "react";
+import ManageEmployeeMainScreen from "../../../../components/ManageEmployee/ManageEmployeeMainScreen/index";
+
 
 function ManageEmployee() {
-	return <div>ManageEmployee</div>;
+    return (
+        <ManageEmployeeMainScreen />
+    );
 }
 
 export default ManageEmployee;

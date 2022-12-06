@@ -1,0 +1,61 @@
+.TagContainer {
+    width: 390px;
+    height: 152.19px;
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.5s;
+    animation: ease-in;
+}
+
+.TagContainer:hover {
+    transform: scale(1,1);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+.McpTagName {
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+
+    position: absolute;
+    top: 30px;
+    left: 25px;
+
+
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}
+
+.McpTagArea {
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+
+    position: absolute;
+    top: 60px;
+    left: 25px;
+
+    font-family: 'Helvetica';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}
+
+.AddProgressBar {
+    height: fit-content;
+    width: fit-content;
+
+    position: absolute;
+    top: 88px;
+    left: 25px;
+}
