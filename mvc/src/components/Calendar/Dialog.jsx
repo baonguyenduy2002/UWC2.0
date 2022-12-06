@@ -53,7 +53,6 @@ export default function AddDialogs(props) {
 	};
 
 	const doCreate = async (data) => {
-		console.log("2:", data);
 		handleCreate(data);
 	};
 

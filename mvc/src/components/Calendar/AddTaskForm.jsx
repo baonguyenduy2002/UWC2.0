@@ -14,6 +14,7 @@ import { startOfToday, endOfToday } from "date-fns";
 import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
+import { format } from "date-fns";
 
 const initialFValues = {
 	id: 0,
@@ -57,39 +58,6 @@ export default function AddTaskForm(props) {
 		},
 	];
 
-	function getOptionList(employee) {
-		return {
-			name: employee.name,
-			id: employee.id,
-		};
-	}
-
-	//------------------------useState--------------------
-	const option = employeeList.map(getOptionList);
-	const [startDate, setStartDate] = useState(startOfToday());
-	const [endDate, setEndDate] = useState(endOfToday());
-	const [values, setValues] = useState({
-		...initialFValues,
-		startDatetime: startDate,
-		endDatetime: endDate,
-	});
-
-	//--------------------Haddler
-	const handleChangeStartDate = (newValue) => {
-		setStartDate(newValue);
-
-		setValues({ startDatetime: startDate, ...values });
-	};
-
-	const handleChangeEndDate = (newValue) => {
-		setEndDate(newValue);
-		setValues({ endDatetime: endDate, ...values });
-	};
-
-	const doCreate = async (data) => {
-		handleCreate(data);
-	};
-
 	const MCPList = [
 		{
 			id: 1,
@@ -129,6 +97,80 @@ export default function AddTaskForm(props) {
 		},
 	];
 
+	const VehicleList = [
+		{
+			id: 1,
+			name: "CH01",
+		},
+		{
+			id: 2,
+			name: "CH02",
+		},
+		{
+			id: 3,
+			name: "CH03",
+		},
+		{
+			id: 4,
+			name: "CH04",
+		},
+		{
+			id: 5,
+			name: "CH05",
+		},
+	];
+
+	const AreaList = [
+		{
+			id: 1,
+			name: "Area 1",
+		},
+		{
+			id: 2,
+			name: "Area 2",
+		},
+		{
+			id: 3,
+			name: "Area 3",
+		},
+		{
+			id: 4,
+			name: "Area 4",
+		},
+		{
+			id: 5,
+			name: "Area 5",
+		},
+	];
+
+	function getOptionList(employee) {
+		return {
+			name: employee.name,
+			id: employee.id,
+		};
+	}
+
+	//------------------------useState--------------------
+	const optionEm = employeeList.map(getOptionList);
+	const optionMCP = MCPList.map(getOptionList);
+	const optionVehicle = VehicleList.map(getOptionList);
+	const optionArea = AreaList.map(getOptionList);
+	const [startDate, setStartDate] = useState(startOfToday());
+	const [endDate, setEndDate] = useState(endOfToday());
+
+	//--------------------Haddler
+	const handleChangeStartDate = (newValue) => {
+		setStartDate(newValue);
+	};
+
+	const handleChangeEndDate = (newValue) => {
+		setEndDate(newValue);
+	};
+
+	const doCreate = async (data) => {
+		handleCreate(data);
+	};
+
 	const [checkedMCP, setCheckedMCPs] = useState([]);
 
 	const handleCheck = (id) => {
@@ -157,29 +199,26 @@ export default function AddTaskForm(props) {
 						style={{ width: 300, marginTop: 8, marginBottom: 8 }}
 						id="des"
 						label="Task Description"
-						value={values.des}
+						value={initialFValues.des}
 						onChange={(event, newValue) => {
-							setValues({ des: newValue, ...values });
-							console.log("checking:", values);
+							initialFValues.des = event.target.value;
 						}}
 					/>
 					<Autocomplete
 						clearOnBlur={false}
 						style={{ width: 300, marginTop: 8, marginBottom: 8 }}
 						id="emId"
-						options={option}
+						options={optionEm}
 						getOptionLabel={(option) => option.name}
 						renderInput={(params) => (
 							<TextField {...params} label="Employee" placeholder="employee" />
 						)}
-						value={values.emId}
-						onChange={(event, newValue) =>
-							setValues({
-								emID: newValue.id,
-								collector: newValue.name,
-								...values,
-							})
-						}
+						value={initialFValues.emId}
+						onChange={(event, newValue) => {
+							console.log("hello: ", newValue.id);
+							initialFValues.emId = newValue.id;
+							initialFValues.collector = newValue.name;
+						}}
 					/>
 					<LocalizationProvider dateAdapter={AdapterDateFns}>
 						<span style={{ width: 300, marginTop: 8, marginBottom: 8 }}>
@@ -189,7 +228,13 @@ export default function AddTaskForm(props) {
 								id="time"
 								label="Start Date Time"
 								value={startDate}
-								onChange={handleChangeStartDate}
+								onChange={(newValue) => {
+									handleChangeStartDate(newValue);
+									initialFValues.startDatetime = format(
+										newValue,
+										"yyyy-MM-dd'T'HH:mm"
+									);
+								}}
 								renderInput={(params) => (
 									<TextField
 										{...params}
@@ -205,7 +250,13 @@ export default function AddTaskForm(props) {
 								id="time"
 								label="End Date Time"
 								value={endDate}
-								onChange={handleChangeEndDate}
+								onChange={(newValue) => {
+									handleChangeEndDate(newValue);
+									initialFValues.endDatetime = format(
+										newValue,
+										"yyyy-MM-dd'T'HH:mm"
+									);
+								}}
 								renderInput={(params) => (
 									<TextField
 										{...params}
@@ -220,29 +271,29 @@ export default function AddTaskForm(props) {
 						style={{ width: 300, marginTop: 8, marginBottom: 8 }}
 						disablePortal
 						id="WorkingArea"
-						options={option}
+						options={optionArea}
 						getOptionLabel={(option) => option.name}
 						renderInput={(params) => (
 							<TextField {...params} label="Area" placeholder="area" />
 						)}
-						value={values.workingArea}
-						onChange={(event, newValue) =>
-							setValues({ workingArea: newValue, ...values })
-						}
+						value={initialFValues.workingArea}
+						onChange={(event, newValue) => {
+							initialFValues.workingArea = newValue.name;
+						}}
 					/>
 					<Autocomplete
 						clearOnBlur={false}
 						style={{ width: 300, marginTop: 8, marginBottom: 8 }}
 						id="vehicle"
-						options={option}
+						options={optionVehicle}
 						getOptionLabel={(option) => option.name}
 						renderInput={(params) => (
 							<TextField {...params} label="Truck" placeholder="truck" />
 						)}
-						value={values.vehicle}
-						onChange={(event, newValue) =>
-							setValues({ vehicle: newValue, ...values })
-						}
+						value={initialFValues.vehicle}
+						onChange={(event, newValue) => {
+							initialFValues.vehicle = newValue.name;
+						}}
 					/>
 				</Grid>
 				<Grid item xs={6}>
@@ -284,8 +335,7 @@ export default function AddTaskForm(props) {
 							variant="contained"
 							endIcon={<SendIcon />}
 							onClick={() => {
-								console.log("Add: ", values);
-								doCreate(values);
+								doCreate(initialFValues);
 								handleCloseDialog();
 							}}
 						>
