@@ -3,15 +3,17 @@ import "./MCPTag.css";
 import ProgressBar from "../ProgressBar/index";
 
 const MCPTag = (props) => {
-  return (
-    <div className="TagContainer">
-      <h3 className="McpTagName">{props.name}</h3>
-      <p className="McpTagArea">{props.area}</p>
-      <div className="AddProgressBar">
-        <ProgressBar status={props.status} size="small" />
-      </div>
-    </div>
-  );
+	const { id, name, area, status, doGetMCP } = props;
+
+	return (
+		<div className="TagContainer" onClick={doGetMCP}>
+			<h3 className="McpTagName">{name}</h3>
+			<p className="McpTagArea">{area}</p>
+			<div className="AddProgressBar">
+				<ProgressBar status={status} size="small" />
+			</div>
+		</div>
+	);
 };
 
 export default MCPTag;

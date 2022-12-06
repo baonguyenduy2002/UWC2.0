@@ -27,7 +27,7 @@ export const mcpData = {
 		name: "MCP 1",
 		area: "Area 1",
 		location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
-		status: 95,
+		status: 60,
 	},
 	[idList[1]]: {
 		id: idList[1],
