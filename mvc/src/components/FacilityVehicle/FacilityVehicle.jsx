@@ -2,54 +2,54 @@ import React from "react";
 import SearchBar from "../SearchBar/index";
 import DropDownMenu from "../Facility/DropDownMenu/index";
 import AddButton from "../Facility/AddButton/index";
-import DetailVehicle from "../Facility/DetailVehicle/index";
+import DetailFacilityVehicle from "../Facility/DetailFacility/DetailFacilityVehicle";
 import VehicleTag from "../Facility/VehicleTag/index";
 import { iconsActiveBox } from "../../assets/index";
 
 import "./FacilityVehicle.css";
 
-const MCPs = [
+const vehicleData = [
   {
-    id: "#123456",
-    name: "MCP 1",
-    area: "Area 1",
-    location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
-    status: 95,
+    id: "CH11",
+    name: "Truck 1",
+    route: ["MCP 1", "MCP 2", "MCP 3"],
+    fuel: 70,
+    status: true,
   },
   {
-    id: "#111111",
-    name: "MCP 2",
-    area: "Area 1",
-    location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
-    status: 90,
+    id: "CH12",
+    name: "Truck 2",
+    route: ["MCP 1", "MCP 2", "MCP 3"],
+    fuel: 70,
+    status: false,
   },
   {
-    id: "#123234",
-    name: "MCP 3",
-    area: "Area 2",
-    location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
-    status: 60,
+    id: "CH13",
+    name: "Truck 3",
+    route: ["MCP 1", "MCP 2", "MCP 3"],
+    fuel: 70,
+    status: true,
   },
   {
-    id: "#444456",
-    name: "MCP 4",
-    area: "Area 2",
-    location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
-    status: 30,
+    id: "CH14",
+    name: "Truck 4",
+    route: ["MCP 1", "MCP 2", "MCP 3"],
+    fuel: 70,
+    status: false,
   },
   {
-    id: "#773453",
-    name: "MCP 5",
-    area: "Area 3",
-    location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
-    status: 20,
+    id: "CH15",
+    name: "Truck 5",
+    route: ["MCP 1", "MCP 2", "MCP 3"],
+    fuel: 70,
+    status: true,
   },
   {
-    id: "#000923",
-    name: "MCP 6",
-    area: "Area 3",
-    location: "268 Ly Thuong Kiet, 14 ward, 10 District, Ho Chi Minh City",
-    status: 50,
+    id: "CH16",
+    name: "Truck 6",
+    route: ["MCP 1", "MCP 2", "MCP 3"],
+    fuel: 70,
+    status: false,
   },
 ];
 
@@ -90,15 +90,13 @@ const FacilityVehicle = (props) => {
         </div>
       </div>
       <div className="ShowDetail">
-        <DetailVehicle
-          id='#CH11'
-          name='Truck 1'
-          status='Active'
-          route={['MCP 1', 'MCP 2', 'MCP 3']}
-          capacity={5000}
-          curFuel={71}
-          totalFuel={221}
-        ></DetailVehicle>
+        <DetailFacilityVehicle
+          id={vehicleData[0].id}
+          name={vehicleData[0].name}
+          route={vehicleData[0].route}
+          fuel={vehicleData[0].fuel}
+          status={vehicleData[0].status}
+        ></DetailFacilityVehicle>
       </div>
     </div>
   );

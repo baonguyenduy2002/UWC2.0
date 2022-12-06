@@ -4,7 +4,6 @@ import { iconsEmployee } from "../../../assets/index";
 
 import "./PersonalInfo.css";
 
-
 function PersonalInfo(props) {
     const {id, name, type, workingStatus, dob, address, email, url} = props;
     return (
@@ -41,6 +40,9 @@ function PersonalInfo(props) {
 
 
         </div>
-    );
+      </div>
+      <div className="Part3"></div>
+    </div>
+  );
 }
 export default PersonalInfo;

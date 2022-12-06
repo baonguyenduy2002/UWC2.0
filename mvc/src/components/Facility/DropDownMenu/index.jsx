@@ -19,7 +19,7 @@ function DropDownMenu(props) {
     doHandleChange();
   };
 
-  const doHandleChange = () => handleChange();
+  const doHandleChange = (bool) => handleChange(bool);
 
   return (
     <div className="DropDownContainer">
@@ -39,10 +39,12 @@ function DropDownMenu(props) {
           <ul className="DropDownList">
             {options.map((option) => (
               <li
-                onClick={
-                  onOptionClicked(option)
-                  
-                }
+                onClick={() => {
+                  onOptionClicked(option);
+                  option == "MCPs Management"
+                    ? doHandleChange(true)
+                    : doHandleChange(false);
+                }}
                 key={Math.random()}
                 style={
                   selectedOption === option

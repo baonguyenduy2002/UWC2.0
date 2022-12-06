@@ -4,8 +4,8 @@ import FacilityMCP from "../../../../components/FacilityMCP/FacilityMCP";
 
 function Facility() {
   const [changeState, setChange] = useState(true);
-  const handleChange = () => {
-    setChange(!changeState);
+  const handleChange = (bool) => {
+    setChange(bool);
   };
 
   return changeState ? (

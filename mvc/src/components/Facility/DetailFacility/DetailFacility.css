@@ -115,3 +115,179 @@
     background-color: #315C57;
     border-radius: 5px;
 }
+/* --------------- */
+/* Vehicles Detail */
+
+#VehicleName {
+    position: absolute;
+    top: 30px;
+    left: 35px;
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 75px;
+    color: #315C57;
+}
+
+#VehicleId {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 60px;
+
+    position: absolute;
+    left: 622px;
+    top: 30px;
+}
+
+#Capacity {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+
+    position: absolute;
+    left: 35px;
+    top: 130px;
+}
+
+#VehiclesCapacity {
+    margin: 0;
+    width: 642px;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+
+    text-align: left;
+    position: absolute;
+    left: 180px;
+    top: 134px;
+}
+
+#Fuel {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+
+    position: absolute;
+    left: 35px;
+    top: 200px;
+}
+
+#VehicleFuel {
+    margin: 0;
+    width: 642px;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+
+    text-align: left;
+    position: absolute;
+    left: 180px;
+    top: 201px;
+}
+
+#Route {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+
+    position: absolute;
+    left: 35px;
+    top: 270px;
+}
+
+#VehicleRoute {
+    margin: 0;
+    width: 642px;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+
+    text-align: left;
+    position: absolute;
+    left: 250px;
+    top: 271px;
+}
+
+#Status {
+    margin: 0;
+    width: fit-content;
+    height: fit-content;
+    font-family: 'Poppins';
+
+    color: #315C57;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+
+    position: absolute;
+    left: 500px;
+    top: 130px;
+}
+
+.VehicleStatus {
+    height: 38px;
+    width: 112px;
+    background-color: #35A97B;
+
+    position: absolute;
+    top: 133px;
+    left: 620px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
