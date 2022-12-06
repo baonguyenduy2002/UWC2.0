@@ -1,7 +1,7 @@
 import mcpService from "../service/mcp.service";
 
-const getMCP = () => mcpService.getMCP();
-const getMCPs = (id) => mcpService.getMCPs(id);
+const getMCP = (id) => mcpService.getMCP(id);
+const getMCPs = () => mcpService.getMCPs();
 const createMCP = (data) => mcpService.createMCP(data);
 const removeMCP = (id, data) => mcpService.removeMCP(id, data);
 

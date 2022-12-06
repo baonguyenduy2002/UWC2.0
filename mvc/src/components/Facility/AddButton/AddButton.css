@@ -1,25 +1,25 @@
 .AddButton {
-    background-color: #fff;
-    border: none;
-    height: 30px;
-    width: 150px;
-    border-radius: 5px;
+	background-color: #fff;
+	border: none;
+	height: 32px;
+	width: 150px;
+	border-radius: 5px;
 
-    font-family: 'Poppins';
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 18px;
-    text-align: center;
-    color: #315C57;
-    box-shadow: 0px 4px 4px rgba(147, 202, 172, 0.15);
+	font-family: "Poppins";
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 18px;
+	text-align: center;
+	color: #315c57;
+	box-shadow: 0px 4px 4px rgba(147, 202, 172, 0.15);
 }
 
 .AddButton:hover {
-    background-color: #93CAAC;
-    color: #EAF9F3;
+	background-color: #93caac;
+	color: #eaf9f3;
 }
 
-.AddButton:focus {
-    background-color: #315C57;
-    color: #EAF9F3;
+.AddButton:active {
+	background-color: #315c57;
+	color: #eaf9f3;
 }

@@ -12,26 +12,13 @@ const FacilityMCP = (props) => {
 	const { handleChange } = props;
 
 	//----calldata-----
-	const [mcpData, setMCP] = useState({});
-	const [mcpChosen, setMCPChosen] = useState([]);
-
-	//----Handdler-----
-	const doGetMCP = async (id) => {
-		try {
-			await api.mcpController.getMCP(id).then((res) => {
-				setMCPChosen(res);
-			});
-		} catch (error) {
-			console.log(error);
-		}
-	};
+	const [mcpData, setMCP] = useState([]);
+	const [mcpIdx, setMcpIdx] = useState(0);
 
 	//----useEffect----
 	useEffect(() => {
 		api.mcpController.getMCPs().then((res) => {
-			console.log(res);
 			setMCP(res);
-			setMCPChosen(res[0]);
 		});
 	}, []);
 
@@ -51,30 +38,37 @@ const FacilityMCP = (props) => {
 				<p className="TotalMCPs">Total: </p>
 				<hr className="Line" />
 				<div className="MCPsSrollList">
-					{Object.values(mcpData).map((MCP) => (
-						<div className="McpTag" key={MCP.id}>
-							<MCPTag
-								id={MCP.id}
-								name={MCP.name}
-								area={MCP.area}
-								status={MCP.status}
-								doGetMCP={() => doGetMCP(MCP.id)}
-							/>
-						</div>
-					))}
+					{mcpData &&
+						mcpData.map((MCP, index) => (
+							<div className="McpTag" key={MCP.id}>
+								<MCPTag
+									id={MCP.id}
+									name={MCP.name}
+									area={MCP.area}
+									status={MCP.status}
+									// doGetMCP={() => doGetMCP(MCP.id)}
+									idx={index}
+									doGetMCP={setMcpIdx}
+								/>
+							</div>
+						))}
 				</div>
 				<div className="Addbutton">
 					<AddButton name="Add MCP"></AddButton>
 				</div>
 			</div>
 			<div className="ShowDetail">
-				<DetailFacilityMCP
-					id={mcpChosen.id}
-					name={mcpChosen.name}
-					area={mcpChosen.area}
-					location={mcpChosen.location}
-					status={mcpChosen.status}
-				></DetailFacilityMCP>
+				{mcpData.length !== 0 ? (
+					<DetailFacilityMCP
+						id={mcpData[mcpIdx].id}
+						name={mcpData[mcpIdx].name}
+						area={mcpData[mcpIdx].area}
+						location={mcpData[mcpIdx].location}
+						status={mcpData[mcpIdx].status}
+					/>
+				) : (
+					<></>
+				)}
 			</div>
 		</div>
 	);

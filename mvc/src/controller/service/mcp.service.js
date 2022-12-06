@@ -6,7 +6,6 @@ let id = "#1019";
 export const getMCP = (id) =>
 	new Promise((resolve, reject) => {
 		const mcp = mcps_tmp[id];
-		console.log(id);
 
 		if (!mcp) {
 			return setTimeout(() => reject(new Error("Task data not found!")), 300);
