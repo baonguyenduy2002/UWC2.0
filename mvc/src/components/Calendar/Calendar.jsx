@@ -17,10 +17,9 @@ import {
 	startOfToday,
 } from "date-fns";
 import vi from "date-fns/locale/vi";
-import "./Calendar.css";
 import AddDialogs from "./Dialog";
 import EditDialogs from "./EditLog";
-
+import "./Calendar.css";
 import api from "../../controller/api/route";
 
 function classNames(...classes) {
@@ -228,13 +227,11 @@ const TaskCalendar = () => {
 
 const Meeting = (props) => {
 	const [openEditPopup, setEditPopup] = useState(false);
-
 	const startDateTime = parseISO(props.task.startDatetime);
 	const endDateTime = parseISO(props.task.endDatetime);
+
 	const doHandleRemove = () => props.handleRemove(props.task.id);
-
 	const doHandleUpdate = (data) => props.handleEdit(props.task.id, data);
-
 	const doOpenEditPopup = () => {
 		setEditPopup(true);
 	};
