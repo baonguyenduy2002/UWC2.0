@@ -1,12 +1,17 @@
-.MapFiled{
-    height: 400px;
-    width: 900px;
-    border-radius: 10px;
-    background-color: black;
+.MapContainerTask{
+    height: 700px;
+    width: 1000px;
+    border-radius: 20px;
 }
 
-.MapContainer{
-    height: 400px;
-    width: 800px;
-    border-radius: 10px;
+.MapContainerDashboard{
+    height: 200px;
+    width: 600px;
+    border-radius: 20px;
+}
+
+.MapContainerVehicle{
+    height: 450px;
+    width: 840px;
+    border-radius: 20px;
 }

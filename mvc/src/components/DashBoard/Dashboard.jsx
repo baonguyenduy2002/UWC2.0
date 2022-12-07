@@ -1,6 +1,7 @@
 import React from "react";
 import "./Dashboard.css"  
 import dashboard_image from "../../assets/image/dashboard_image.svg";
+import Mapbox from "../Calendar/Map";
 
 const mcps = [
     {
@@ -54,7 +55,11 @@ export default function Dashboard(){
             </div>
             <div className="MapEmployeeFrame">
                 <div className = "DashboardMiniMap">
-                    <h1>Map</h1>
+                    <h1 style = {{textAlign: "left"}}>
+                        Map
+                    </h1>
+                    <Mapbox type= "dashboard" />
+
                 </div>
                 <div className = "DashboardEmployeePreview">
                     <h1>employee</h1>

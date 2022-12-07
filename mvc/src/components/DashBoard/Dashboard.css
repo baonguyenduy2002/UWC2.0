@@ -108,6 +108,7 @@
     border-radius: 20px 20px 20px 20px;
     align-items: center;
     width: 625px;
+    text-align: left;
 }
 
 .DashboardEmployeePreview{

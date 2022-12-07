@@ -1,5 +1,6 @@
 import React from "react";
 import "./RightSideBar.css"  
+import MiniCalendar from "../Calendar/MiniCalendar";
 
 
 export default function RightSideBar(){
@@ -26,7 +27,7 @@ export default function RightSideBar(){
 
             </div>
             <div className = "MiniCalendar">
-
+                <MiniCalendar />
             </div>
         </div>
     )

@@ -13,7 +13,7 @@ function Setting() {
 
 	return (
 		<div>
-			<Mapbox />
+			<Mapbox type = "task"/>
 			<button onClick={handleSubmit}>Logout</button>
 		</div>
 	);

@@ -46,12 +46,10 @@ BootstrapDialogTitle.propTypes = {
 };
 
 export default function AddDialogs(props) {
-  const { openAddPopup, setOpenAddPopup } = props;
-
+  const { title, openAddPopup, setOpenAddPopup, children } = props
   const handleClose = () => {
     setOpenAddPopup(false);
   };
-
   return (
     <BootstrapDialog
       PaperProps={{
@@ -63,9 +61,9 @@ export default function AddDialogs(props) {
       open={openAddPopup}
     >
       <BootstrapDialogTitle id="customized-dialog-title" onClose={handleClose}>
-        Add Employee
+        {title}
       </BootstrapDialogTitle>
-      <span style={{ marginLeft: 100, paddingBottom: 25 }}><AddTaskForm dialogState={openAddPopup} setDialogState={setOpenAddPopup} /></span>
+      {children}
     </BootstrapDialog>
   );
 }

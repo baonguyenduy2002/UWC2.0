@@ -14,25 +14,34 @@ import { startOfToday, endOfToday } from 'date-fns'
 import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import SendIcon from '@mui/icons-material/Send';
 import Stack from '@mui/material/Stack';
+import { matchPath } from 'react-router-dom';
+import Mapbox from './Map';
+import AddDialogs from './Dialog';
+import EditLocationIcon from '@mui/icons-material/EditLocation';
 
 const initialFValues = {
     taskId: 0,
-    des: null,
-    emId: null,
-    startDate: null,
-    endDate: null,
-    employeeName: null,
-    WorkingArea: null,
+    des: undefined,
+    emId: undefined,
+    startDate: undefined,
+    endDate: undefined,
+    employeeName: undefined,
+    WorkingArea: undefined,
     MCPs: [],
-    vehicle: null,
-    route: true,
+    vehicle: undefined,
+    route: false,
     status: false
 }
 
 export default function AddTaskForm(props) {
-    const {dialogState, setDialogState} = props
+    const { dialogState, setDialogState, type, initialValue } = props
     const handleCloseDialog = () => {
+        console.log(values)
         setDialogState(false);
+    };
+    const [openAddPopup, setOpenAddPopup] = React.useState(false);
+    const handleOpenAddPopup = () => {
+        setOpenAddPopup(true);
     };
     const employeeList = [
         {
@@ -54,15 +63,6 @@ export default function AddTaskForm(props) {
             email: "johnwick@gmail.com",
         },
     ];
-
-    function getOptionList(employee) {
-        return {
-            name: employee.name,
-            id: employee.id,
-        }
-    }
-
-    const option = employeeList.map(getOptionList)
     const [startDate, setStartDate] = React.useState(startOfToday());
     const [endDate, setEndDate] = React.useState(endOfToday());
     const [values, setValues] = useState({ ...initialFValues, startDate: startDate, endDate: endDate });
@@ -78,42 +78,53 @@ export default function AddTaskForm(props) {
         setValues({ endDate: newValue, ...values });
     };
 
-    const MCPList = [
+    const areaList = ['Area1', 'Area2', 'Area3', 'Area4', 'Area5']
+    const truckList = ['Truck1', 'Truck2', 'Truck3', 'Truck4', 'Truck5']
+    const mcpList = [
         {
             id: 1,
-            name: 'MCP1'
+            name: 'MCP1',
+            area: 'Area1'
         },
         {
             id: 2,
-            name: 'MCP2'
+            name: 'MCP2',
+            area: 'Area2'
         },
         {
             id: 3,
-            name: 'MCP3'
+            name: 'MCP3',
+            area: 'Area4'
         },
         {
             id: 4,
-            name: 'MCP4'
+            name: 'MCP4',
+            area: "Area2"
         },
         {
             id: 5,
-            name: 'MCP5'
+            name: 'MCP5',
+            area: 'Area5'
         },
         {
             id: 6,
-            name: 'MCP6'
+            name: 'MCP6',
+            area: 'Area3'
         },
         {
             id: 7,
-            name: 'MCP7'
+            name: 'MCP7',
+            area: 'Area1'
         },
         {
             id: 8,
-            name: 'MCP8'
+            name: 'MCP8',
+            area: 'Area3'
         },
         {
             id: 9,
-            name: 'MCP9'
+            name: 'MCP9',
+            area: 'Area4'
         }
     ]
 
@@ -124,9 +135,11 @@ export default function AddTaskForm(props) {
         setCheckedMCPs(prev => {
             const isCheckedMCP = checkedMCP.includes(id)
             if (isCheckedMCP) {
+                setValues({ MCPs: checkedMCP.filter(item => item !== id), ...values })
                 return checkedMCP.filter(item => item !== id)
             }
             else {
+                setValues({ MCPs: [...prev, id], ...values })
                 return [...prev, id]
             }
         })
@@ -149,14 +162,15 @@ export default function AddTaskForm(props) {
                         onChange={(event, newValue) => setValues({ des: newValue, ...values })}
                     />
                     <Autocomplete
+                        isOptionEqualToValue={(option, value) => option.id === value.id}
                         clearOnBlur={false}
                         style={{ width: 300, marginTop: 8, marginBottom: 8 }}
                         id="emId"
-                        options={option}
-                        getOptionLabel={(option) => option.name}
+                        options={employeeList}
+                        getOptionLabel={(employeeList) => employeeList.name}
                         renderInput={(params) => <TextField {...params} label="Employee" placeholder='employee' />}
                         value={values.emId}
-                        onChange={(event, newValue) => setValues({ emID: newValue, ...values })}
+                        onChange={(event, newValue) => setValues({ emId: newValue.id, employeeName: newValue.name, ...values })}
                     />
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <span style={{ width: 300, marginTop: 8, marginBottom: 8 }}>
@@ -187,21 +201,20 @@ export default function AddTaskForm(props) {
                         style={{ width: 300, marginTop: 8, marginBottom: 8 }}
                         disablePortal
                         id="WorkingArea"
-                        options={option}
-                        getOptionLabel={(option) => option.name}
+                        options={areaList}
                         renderInput={(params) => <TextField {...params} label="Area" placeholder='area' />}
                         value={values.WorkingArea}
                         onChange={(event, newValue) => setValues({ WorkingArea: newValue, ...values })}
                     />
                     <Autocomplete
+                        isOptionEqualToValue={(option, value) => option === value}
                         clearOnBlur={false}
                         style={{ width: 300, marginTop: 8, marginBottom: 8 }}
                         id="vehicle"
-                        options={option}
-                        getOptionLabel={(option) => option.name}
+                        options={truckList}
                         renderInput={(params) => <TextField {...params} label="Truck" placeholder='truck' />}
                         value={values.vehicle}
-                        onChange={(event, newValue) => setValues({ vehicle: newValue, ...values })}
+                        onChange={(event, newValue) => setValues({ ...values, vehicle: newValue })}
                     />
                 </Grid>
                 <Grid item xs={6} >
@@ -209,18 +222,18 @@ export default function AddTaskForm(props) {
                         <List className='ListFrame' component="nav" aria-label="mailbox folders" >
                             <h1 style={{ color: "#315C57" }}>Choose MCPs</h1>
                             {
-                                MCPList.map((MCP, idx) => (
+                                mcpList.map((mcp, idx) => (
                                     <ListItem button divider key={idx}
                                         className="CheckButton"
-                                        onClick={() => handleCheck(MCP.id)}
+                                        onClick={() => handleCheck(mcp.id)}
                                     >
                                         <input
                                             className="CheckBox"
                                             type="checkbox"
-                                            checked={checkedMCP.includes(MCP.id)}
-                                            onChange={() => handleCheck(MCP.id)}
+                                            checked={checkedMCP.includes(mcp.id)}
+                                            onChange={() => handleCheck(mcp.id)}
                                         />
-                                        {MCP.name}
+                                        {mcp.name}
                                     </ListItem>
 
                                 ))
@@ -229,12 +242,23 @@ export default function AddTaskForm(props) {
                     </div>
                     <Stack direction="row" spacing={2}
                         style={{ marginTop: 20, marginLeft: 10 }}>
-                        <Button variant="outlined" startIcon={<AddLocationAltIcon />}>
-                            Create Route
+                        <Button 
+                            variant="outlined" 
+                            startIcon={(type === 'add' && <AddLocationAltIcon/>) || <EditLocationIcon/> } 
+                            onClick = {handleOpenAddPopup}
+                        >
+                            {(type === 'add' && "Tạo lộ trình") || "Sửa lộ trình"}
                         </Button>
                         <Button variant="contained" endIcon={<SendIcon />} onClick={handleCloseDialog}>
-                            Send
+                            Xác nhận
                         </Button>
+                        <AddDialogs 
+                            title = {(type === 'add' && "Tạo lộ trình") || "Sửa lộ trình"} 
+                            openAddPopup= {openAddPopup} 
+                            setOpenAddPopup = {setOpenAddPopup}
+                        >  
+                            <Mapbox type = "task"/>
+                        </AddDialogs>
                     </Stack>
 
                 </Grid>

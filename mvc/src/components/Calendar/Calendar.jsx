@@ -18,6 +18,8 @@ import {
 import { Fragment, useState } from 'react'
 import "./Calendar.css"
 import AddDialogs from "./Dialog";
+import vi from 'date-fns/locale/vi';
+import AddTaskForm from "./AddTaskForm";
 
 const meetings = [
   {
@@ -25,24 +27,24 @@ const meetings = [
     name: 'Leslie Alexander',
     imageUrl:
       'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      startDatetime: '2022-12-13T14:00',
-      endDatetime: '2022-12-13T14:30',
+    startDatetime: '2022-12-13T14:00',
+    endDatetime: '2022-12-13T14:30',
   },
   {
     id: 2,
     name: 'Michael Foster',
     imageUrl:
       'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      startDatetime: '2022-12-13T14:00',
-      endDatetime: '2022-12-13T14:30',
+    startDatetime: '2022-12-13T14:00',
+    endDatetime: '2022-12-13T14:30',
   },
   {
     id: 3,
     name: 'Dries Vincent',
     imageUrl:
       'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      startDatetime: '2022-12-13T14:00',
-      endDatetime: '2022-12-13T14:30',
+    startDatetime: '2022-12-13T14:00',
+    endDatetime: '2022-12-13T14:30',
   },
   {
     id: 4,
@@ -143,7 +145,7 @@ export default function TaskCalendar() {
             <div className="CalendarHeader">
               <h2 className="CalendarHeaderTitle">
                 {
-                  format(firstDayCurrentMonth, 'MMMM yyyy')
+                  format(firstDayCurrentMonth, 'MMMM yyyy', { locale: vi })
                 }
               </h2>
               <button
@@ -183,14 +185,14 @@ export default function TaskCalendar() {
                     type="button"
                     onClick={() => setSelectedDay(day)}
                     className={classNames(
-                      isEqual(day, selectedDay) && 
-                        !isToday(day) && "ChosenNotToday",
-                      isEqual(day, selectedDay) && 
-                        isToday(day) && "ChosenToday",
-                      !isEqual(day, selectedDay) && 
-                        !isToday(day) && "NotChosenNotToday",
-                      !isEqual(day, selectedDay) && 
-                        isToday(day) && "NotChosenToday",
+                      isEqual(day, selectedDay) &&
+                      !isToday(day) && "ChosenNotToday",
+                      isEqual(day, selectedDay) &&
+                      isToday(day) && "ChosenToday",
+                      !isEqual(day, selectedDay) &&
+                      !isToday(day) && "NotChosenNotToday",
+                      !isEqual(day, selectedDay) &&
+                      isToday(day) && "NotChosenToday",
                     )}
                   >
                     <time className="DayFormat" dateTime={format(day, 'yyyy-MM-dd')}>
@@ -202,28 +204,28 @@ export default function TaskCalendar() {
                     {meetings.some((meeting) =>
                       isSameDay(parseISO(meeting.startDatetime), day)
                     ) && (
-                      <div className="MeetingIndicator"></div>
-                    )}
+                        <div className="MeetingIndicator"></div>
+                      )}
                   </div>
                 </div>
               ))}
             </div>
           </div>
           <section className="ScheduleFrame">
-            <div className = "ScheduleHeaderField">
+            <div className="ScheduleHeaderField">
               <h2 className="ScheduleHeader">
-                Schedule for{' '}
+                Danh sách công việc ngày{' '}
                 <time dateTime={format(selectedDay, 'yyyy-MM-dd')}>
-                  {format(selectedDay, 'MMM dd, yyy')}
+                  {format(selectedDay, 'dd, MMM, yyy', { locale: vi })}
                 </time>
               </h2>
               <button
                 type="button"
                 className="AddTaskButton"
-                onClick = {handleOpenAddPopup}
+                onClick={handleOpenAddPopup}
               >
                 <PlusIcon className="ButtonIcon" aria-hidden="true" />
-            </button>
+              </button>
             </div>
             <ol className="TaskList">
               {selectedDayMeetings.length > 0 ? (
@@ -231,13 +233,21 @@ export default function TaskCalendar() {
                   <Meeting meeting={meeting} key={meeting.id} />
                 ))
               ) : (
-                <p>No meetings for today.</p>
+                <p>Hôm nay không có công việc.</p>
               )}
             </ol>
           </section>
         </div>
       </div>
-      <AddDialogs openAddPopup = {openAddPopup} setOpenAddPopup = {setOpenAddPopup} />{console.log(openAddPopup)}
+      <AddDialogs title="Tạo công việc mới" openAddPopup={openAddPopup} setOpenAddPopup={setOpenAddPopup} >
+        <span style={{ marginLeft: 100, paddingBottom: 25 }}>
+          <AddTaskForm 
+            type = "add"
+            dialogState={openAddPopup} 
+            setDialogState={setOpenAddPopup} 
+          />
+        </span>
+      </AddDialogs>
     </div>
   )
 }
@@ -245,16 +255,19 @@ export default function TaskCalendar() {
 function Meeting({ meeting }) {
   let startDateTime = parseISO(meeting.startDatetime)
   let endDateTime = parseISO(meeting.endDatetime)
- 
+  const [openAddPopup, setOpenAddPopup] = React.useState(false);
+  const handleOpenAddPopup = () => {
+    setOpenAddPopup(true);
+  };
   return (
     <li className="Task">
-      <div className= "EmployeeInfoField">
-      <img
-        src={meeting.imageUrl}
-        alt=""
-        className="EmployeeAvatar"
-      />
-      <p className="EmployeeName">{meeting.name}</p>
+      <div className="EmployeeInfoField">
+        <img
+          src={meeting.imageUrl}
+          alt=""
+          className="EmployeeAvatar"
+        />
+        <p className="EmployeeName">{meeting.name}</p>
       </div>
       <div className="TaskTag">
         <p className="TaskInformation">testing</p>
@@ -276,7 +289,7 @@ function Meeting({ meeting }) {
         className="Menu"
       >
         <div>
-          <Menu.Button 
+          <Menu.Button
             className="MenuButton"
           >
             <DotsVerticalIcon className="ButtonIcon" aria-hidden="true" />
@@ -297,7 +310,7 @@ function Meeting({ meeting }) {
               <Menu.Item>
                 {({ active }) => (
                   <button
-                    
+                    onClick={handleOpenAddPopup}
                     className={
                       active ? "MenuItemActive" : "MenuItem"
                     }
@@ -309,7 +322,7 @@ function Meeting({ meeting }) {
               <Menu.Item>
                 {({ active }) => (
                   <button
-                    
+
                     className={
                       active ? "MenuItemActive" : "MenuItem"
                     }
@@ -322,6 +335,15 @@ function Meeting({ meeting }) {
           </Menu.Items>
         </Transition>
       </Menu>
+      <AddDialogs title="Chỉnh sửa công việc" openAddPopup={openAddPopup} setOpenAddPopup={setOpenAddPopup}>
+        <span style={{ marginLeft: 100, paddingBottom: 25 }}>
+          <AddTaskForm 
+            dialogState={openAddPopup} 
+            setDialogState={setOpenAddPopup}
+            type = 'edit'
+          />
+        </span>
+      </AddDialogs>
     </li>
   )
 }
