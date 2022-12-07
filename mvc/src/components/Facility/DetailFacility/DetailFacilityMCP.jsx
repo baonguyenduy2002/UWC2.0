@@ -20,7 +20,7 @@ const DetailFacilityMCP = (props) => {
 			>
 				<ProgressBar status={props.status} size="big" />
 			</div>
-			<div className="Map"> </div>
+			<div className="Map"></div>
 		</div>
 	);
 };

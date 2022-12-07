@@ -75,3 +75,13 @@
 	align-items: center;
 	color: #315c57;
 }
+
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}

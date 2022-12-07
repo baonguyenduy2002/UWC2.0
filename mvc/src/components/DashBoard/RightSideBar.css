@@ -74,3 +74,64 @@
     border: 1px solid #315C57;
     border-radius: 20px 20px 20px 20px;
 }
+
+.MiniNotification-header {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 125%;
+    color: #EAF9F3;
+}
+
+.MiniNotification-noti {
+    position: relative;
+    width: 300px;
+    height: 80px;
+    left: 3%;
+
+    background: #EAF9F3;
+    box-shadow: 0px 4px 4px rgba(147, 202, 172, 0.15);
+    border-radius: 10px;
+}
+
+.MiniNotification-noti img {
+    position: relative;
+    right: 37.5%;
+    top: 27.5%;
+}
+
+.noti1 {
+    top: 3.5%;
+}
+
+.noti2 {
+    top: 8.5%;
+}
+
+.noti3 {
+    top: 13.5%;
+}
+
+.MiniNotification-noti-content {
+    position: absolute;
+    width: 225px;
+    height: 45px;
+    left: 22.5%;
+    bottom: 20%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 125%;
+
+    /* or 15px / */
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+    /* / Dark Green */
+    color: #315C57;
+
+}

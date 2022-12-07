@@ -1,12 +1,12 @@
 .AddButton {
 	background-color: #fff;
 	border: none;
-	height: 32px;
+	height: 30px;
 	width: 150px;
 	border-radius: 5px;
 
 	font-family: "Poppins";
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: 700;
 	line-height: 18px;
 	text-align: center;
@@ -19,7 +19,7 @@
 	color: #eaf9f3;
 }
 
-.AddButton:active {
+.AddButton:focus {
 	background-color: #315c57;
 	color: #eaf9f3;
 }
