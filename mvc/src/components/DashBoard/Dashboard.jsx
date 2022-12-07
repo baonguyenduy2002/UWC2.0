@@ -1,5 +1,6 @@
 import React from "react";
 import "./Dashboard.css"  
+import Avatar from '@mui/material/Avatar';
 import dashboard_image from "../../assets/image/dashboard_image.svg";
 import MCPTagMini from "../Facility/MCPTagMini/index"
 
@@ -24,6 +25,23 @@ const mcps = [
     },
 ]
 
+const employees = [
+    {
+        name: 'Ali Ahmad',
+        type: 'Nhân viên thu gom',
+        url: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    },
+    {
+        name: 'Maria Memon',
+        type: 'Nhân viên dọn vệ sinh',
+        url: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    },
+    {
+        name: 'John',
+        type: 'Nhân viên thu gom',
+        url: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+    },
+];
 export default function Dashboard(){
 
     return (
@@ -60,7 +78,14 @@ export default function Dashboard(){
                     <h1>Map</h1>
                 </div>
                 <div className = "DashboardEmployeePreview">
-                    <h1>employee</h1>
+                    <h1>Employee</h1>
+                    {employees.map((employee, idx) => (
+                        <div className="Employee-list">
+                            <Avatar alt={employee.name} src={employee.url} sx={{ width: 50, height: 50 }}/>
+                            <p id="name"><b>{employee.name}</b></p>
+                            <p id="type">{employee.type}</p>
+                        </div>
+                    ))}
                 </div>
             </div>    
         </div>
