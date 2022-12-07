@@ -1,0 +1,51 @@
+.DropDownContainer {
+    font-family: "Poppins";
+    margin: 0 auto;
+    z-index: 100;
+}
+
+.DropDownHeader {
+    z-index: 1;
+    height: 50.5px;
+    width: 325px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #315C57;
+    background-color: #93CAAC;
+    border-radius: 10px;
+}
+
+.DropDownList {
+    padding: 0;
+    margin: 0;
+    height: 110px;
+    background-color: #fff;
+    color: #315C57;
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+
+
+li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50.5px;
+    width: 325px;
+    list-style: none;
+    border-radius: 10px;
+}
+
+li:hover {
+    background-color: #AEFFDE;
+}
