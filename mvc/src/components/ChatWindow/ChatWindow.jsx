@@ -12,6 +12,7 @@ const ChatWidnow = () => {
     const inputRef = useRef(null);
     let msg = []
     function handleClick() {
+
         setMessage('');
     }
 
