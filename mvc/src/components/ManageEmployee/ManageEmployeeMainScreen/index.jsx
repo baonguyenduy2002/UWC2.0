@@ -10,12 +10,7 @@ import AddEmployeeForm from "../AddEmployeeForm/index";
 import "./ManageEmployee.css"
 
 function ManageEmployeeMainScreen() {
-  const [openInfoDialog, setOpenInfoDialog] = React.useState(false);
   const [openAddEmployee, setOpenAddEmployee] = React.useState(false);
-
-  function handleInfoDialogOpen(value) {
-    setOpenInfoDialog(true);
-  };
 
   function handleAddEmployeeOpen() {
     setOpenAddEmployee(true);
@@ -63,7 +58,24 @@ function ManageEmployeeMainScreen() {
       {/* --------------Employee List------------ */}
 			<div className="EmployeeList">
         {Employees.map((employee, idx) => (
-          <div style={{ width:"fit-content", height: "fit-content"}} key={idx}>
+          <ShowPersonal employee={employee} idx={idx} />
+        ))}
+			</div>
+      <AddEmployeeForm openAddEmployee={openAddEmployee} setOpenAddEmployee={setOpenAddEmployee} />
+		</div>
+	);
+}
+
+
+function ShowPersonal(props) {
+  console.log(props);
+    const [openInfoDialog, setOpenInfoDialog] = React.useState("");
+    const {employee, idx} = props;
+    function handleInfoDialogOpen() {
+      setOpenInfoDialog(true);
+    };
+    return (
+      <div style={{ width:"fit-content", height: "fit-content"}} key={idx}>
             <button onClick={handleInfoDialogOpen} style={{border: "none"}}>
               {EmployeeCard(employee)}
             </button>
@@ -73,16 +85,7 @@ function ManageEmployeeMainScreen() {
               obj={employee}
             />
           </div>
-        ))}
-			</div>
-      <AddEmployeeForm openAddEmployee={openAddEmployee} setOpenAddEmployee={setOpenAddEmployee} />
-		</div>
-	);
-}
-
-
-const ShowPersonal = (props) => {
-
+    );
 };
 
 export default ManageEmployeeMainScreen;
