@@ -19,7 +19,7 @@
 
     display: grid;
     overflow: auto;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 329px 329px 329px 329px;
     gap: 25px 25px;
     padding: 20px;
 }
