@@ -15,6 +15,7 @@ import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
 import { format } from "date-fns";
+import RouteDialogs from "./Routelog";
 
 let initialFValues = {
 	id: 0,
@@ -156,8 +157,13 @@ export default function AddTaskForm(props) {
 	const optionArea = AreaList.map(getOptionList);
 	const [startDate, setStartDate] = useState(startOfToday());
 	const [endDate, setEndDate] = useState(endOfToday());
+	const [openRoutePopup, setopenRoutePopup] = useState(false);
 
 	//--------------------Haddler
+	const handleOpenRoutePopup = () => {
+		setopenRoutePopup(true);
+	};
+
 	const handleChangeStartDate = (newValue) => {
 		setStartDate(newValue);
 	};
@@ -329,7 +335,11 @@ export default function AddTaskForm(props) {
 						spacing={2}
 						style={{ marginTop: 20, marginLeft: 10 }}
 					>
-						<Button variant="outlined" startIcon={<AddLocationAltIcon />}>
+						<Button
+							onClick={handleOpenRoutePopup}
+							variant="outlined"
+							startIcon={<AddLocationAltIcon />}
+						>
 							Create Route
 						</Button>
 						<Button
@@ -342,6 +352,10 @@ export default function AddTaskForm(props) {
 						>
 							Send
 						</Button>
+						<RouteDialogs
+							openRoutePopup={openRoutePopup}
+							setOpenRoutePopup={setopenRoutePopup}
+						/>
 					</Stack>
 				</Grid>
 			</Grid>

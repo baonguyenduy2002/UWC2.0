@@ -210,7 +210,9 @@ const TaskCalendar = () => {
 									/>
 								))
 							) : (
-								<p>Hôm nay chưa giao công việc</p>
+								<p style={{ fontSize: "20pt", marginLeft: 70 }}>
+									Hôm nay chưa giao công việc
+								</p>
 							)}
 						</ol>
 					</section>
@@ -285,7 +287,7 @@ const Meeting = (props) => {
 										onClick={doOpenEditPopup}
 										task={props.task}
 									>
-										Edit
+										Chỉnh sửa
 									</button>
 								)}
 							</Menu.Item>
@@ -296,7 +298,7 @@ const Meeting = (props) => {
 										className={active ? "MenuItemActive" : "MenuItem"}
 										onClick={doHandleRemove}
 									>
-										Remove
+										Xóa
 									</button>
 								)}
 							</Menu.Item>
