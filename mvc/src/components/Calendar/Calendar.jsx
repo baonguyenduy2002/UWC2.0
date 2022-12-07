@@ -243,7 +243,9 @@ const Meeting = (props) => {
 				<p className="EmployeeName">{props.task.collector}</p>
 			</div>
 			<div className="TaskTag">
-				<h2 className="TaskInformation">{props.task.des}</h2>
+				<h2 style={{ fontSize: "20px", marginTop: "-4px" }}>
+					{props.task.des}
+				</h2>
 				<p className="TaskInformation">
 					Lộ trình: {props.task.route ? "Đã tạo" : "Không"}
 				</p>
