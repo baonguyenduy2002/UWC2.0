@@ -16,7 +16,7 @@ import SendIcon from "@mui/icons-material/Send";
 import Stack from "@mui/material/Stack";
 import { format } from "date-fns";
 
-const initialFValues = {
+let initialFValues = {
 	id: 0,
 	imageUrl:
 		"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
@@ -152,7 +152,6 @@ export default function AddTaskForm(props) {
 
 	//------------------------useState--------------------
 	const optionEm = employeeList.map(getOptionList);
-	const optionMCP = MCPList.map(getOptionList);
 	const optionVehicle = VehicleList.map(getOptionList);
 	const optionArea = AreaList.map(getOptionList);
 	const [startDate, setStartDate] = useState(startOfToday());
@@ -273,6 +272,7 @@ export default function AddTaskForm(props) {
 						id="WorkingArea"
 						options={optionArea}
 						getOptionLabel={(option) => option.name}
+						isOptionEqualToValue={(option, value) => option.id === value.id}
 						renderInput={(params) => (
 							<TextField {...params} label="Area" placeholder="area" />
 						)}
@@ -287,6 +287,7 @@ export default function AddTaskForm(props) {
 						id="vehicle"
 						options={optionVehicle}
 						getOptionLabel={(option) => option.name}
+						isOptionEqualToValue={(option, value) => option.id === value.id}
 						renderInput={(params) => (
 							<TextField {...params} label="Truck" placeholder="truck" />
 						)}

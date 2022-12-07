@@ -82,6 +82,8 @@ export const removeTask = (id) =>
 //-----------------------------------------Update one Task--------------------------
 export const updateTask = (id, data) =>
 	new Promise((resolve, reject) => {
+		console.log("id", id);
+		console.log("data", data);
 		if (!taskData_temp[id]) {
 			return setTimeout(() => reject(new Error("Task not found!")), 300);
 		}

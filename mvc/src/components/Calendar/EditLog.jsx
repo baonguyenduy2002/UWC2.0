@@ -47,8 +47,14 @@ BootstrapDialogTitle.propTypes = {
 
 export default function EditDialogs(props) {
 	const { openEditPopup, setEditPopup, task, doHandleUpdate } = props;
-	console.log("EditDiaLog: ", task);
 
+	const makeUpdate = async (data) => {
+		try {
+			await doHandleUpdate(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	const handleClose = () => {
 		setEditPopup(false);
 	};
@@ -68,7 +74,7 @@ export default function EditDialogs(props) {
 			</BootstrapDialogTitle>
 			<span style={{ marginLeft: 100, paddingBottom: 25 }}>
 				<EditTaskForm
-					doHandleUpdate={doHandleUpdate}
+					doHandleUpdate={makeUpdate}
 					dialogState={openEditPopup}
 					setDialogState={setEditPopup}
 					task={task}

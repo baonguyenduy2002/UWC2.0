@@ -18,12 +18,18 @@ import { format } from "date-fns";
 
 export default function EditTaskForm(props) {
 	const { dialogState, setDialogState, task, doHandleUpdate } = props;
+	const [des, setdes] = useState(task.des);
+	const [emId, setemId] = useState(task.emId);
+	const [name, setname] = useState(task.name);
+	const [startDatetime, setstartDatetime] = useState(task.startDatetime);
+	const [endDatetime, setendDatetime] = useState(task.endDatetime);
+	const [area, setarea] = useState(task.area);
+	const [vehicle, setvehicle] = useState(task.vehicle);
 	const handleCloseDialog = () => {
 		setDialogState(false);
 	};
 
-	const initialFValues = task;
-	console.log(task);
+	let initialFValues = task;
 
 	const employeeList = [
 		{
@@ -39,6 +45,13 @@ export default function EditTaskForm(props) {
 			type: "Janitor",
 			workingStatus: true,
 			dob: "14/06/1996",
+		},
+		{
+			id: "CO1126",
+			name: "Michael Foster",
+			type: "Collector",
+			workingStatus: true,
+			dob: "14/7/1999",
 		},
 	];
 
@@ -151,10 +164,26 @@ export default function EditTaskForm(props) {
 		setEndDate(newValue);
 	};
 
-	const doUpdate = () => {
-		//Chưa biết lấy data còn lại trừ cái id ra sao
-		const { id, ...rest } = initialFValues;
-		doHandleUpdate(initialFValues.id, rest);
+	const doUpdate = async () => {
+		try {
+			const data = {
+				imageUrl: initialFValues.imageUrl,
+				des: initialFValues.des,
+				emId: initialFValues.emId,
+				collector: initialFValues.collector,
+				startDatetime: initialFValues.startDatetime,
+				endDatetime: initialFValues.endDatetime,
+				workingArea: initialFValues.workingArea,
+				mcps: initialFValues.mcps,
+				vehicle: initialFValues.vehicle,
+				route: initialFValues.route,
+				status: initialFValues.status,
+			};
+			console.log("testing:", data);
+			await doHandleUpdate(data);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	const [checkedMCP, setCheckedMCPs] = useState([]);
@@ -185,12 +214,14 @@ export default function EditTaskForm(props) {
 						style={{ width: 300, marginTop: 8, marginBottom: 8 }}
 						id="des"
 						label="Task Description"
-						value={initialFValues.des}
+						value={des}
 						onChange={(event, newValue) => {
+							setdes(event.target.value);
 							initialFValues.des = event.target.value;
 						}}
 					/>
 					<Autocomplete
+						freeSolo={true}
 						isOptionEqualToValue={(option, value) => option.id === value.id}
 						clearOnBlur={false}
 						style={{ width: 300, marginTop: 8, marginBottom: 8 }}
@@ -200,10 +231,12 @@ export default function EditTaskForm(props) {
 						renderInput={(params) => (
 							<TextField {...params} label="Employee" placeholder="employee" />
 						)}
-						value={initialFValues.emId}
+						value={emId}
 						onChange={(event, newValue) => {
-							initialFValues.emId = newValue.id;
-							initialFValues.collector = newValue.name;
+							setemId(event.target.value.id);
+							setname(event.target.value.name);
+							initialFValues.emId = event.target.value.id;
+							initialFValues.collector = event.target.value.name;
 						}}
 					/>
 					<LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -213,13 +246,11 @@ export default function EditTaskForm(props) {
 								placeholder="time"
 								id="time"
 								label="Start Date Time"
-								value={startDate}
+								value={startDatetime}
 								onChange={(newValue) => {
 									handleChangeStartDate(newValue);
-									initialFValues.startDatetime = format(
-										newValue,
-										"yyyy-MM-dd'T'HH:mm"
-									);
+									setstartDatetime(format(newValue, "yyyy-MM-dd'T'HH:mm"));
+									initialFValues.startDatetime = newValue;
 								}}
 								renderInput={(params) => (
 									<TextField
@@ -235,13 +266,11 @@ export default function EditTaskForm(props) {
 								placeholder="time"
 								id="time"
 								label="End Date Time"
-								value={endDate}
+								value={endDatetime}
 								onChange={(newValue) => {
 									handleChangeEndDate(newValue);
-									initialFValues.endDatetime = format(
-										newValue,
-										"yyyy-MM-dd'T'HH:mm"
-									);
+									setendDatetime(format(newValue, "yyyy-MM-dd'T'HH:mm"));
+									initialFValues.endDatetime = newValue;
 								}}
 								renderInput={(params) => (
 									<TextField
@@ -253,32 +282,38 @@ export default function EditTaskForm(props) {
 						</span>
 					</LocalizationProvider>
 					<Autocomplete
+						freeSolo={true}
 						clearOnBlur={false}
 						style={{ width: 300, marginTop: 8, marginBottom: 8 }}
 						disablePortal
 						id="WorkingArea"
 						options={optionArea}
 						getOptionLabel={(option) => option.name}
+						isOptionEqualToValue={(option, value) => option.id === value.id}
 						renderInput={(params) => (
 							<TextField {...params} label="Area" placeholder="area" />
 						)}
-						value={initialFValues.workingArea}
+						value={area}
 						onChange={(event, newValue) => {
-							initialFValues.workingArea = newValue.name;
+							setarea(event.target.value);
+							initialFValues.workingArea = event.target.value;
 						}}
 					/>
 					<Autocomplete
+						freeSolo={true}
 						clearOnBlur={false}
 						style={{ width: 300, marginTop: 8, marginBottom: 8 }}
 						id="vehicle"
 						options={optionVehicle}
 						getOptionLabel={(option) => option.name}
+						isOptionEqualToValue={(option, value) => option.id === value.id}
 						renderInput={(params) => (
 							<TextField {...params} label="Truck" placeholder="truck" />
 						)}
-						value={initialFValues.vehicle}
+						value={vehicle}
 						onChange={(event, newValue) => {
-							initialFValues.vehicle = newValue.name;
+							setvehicle(event.target.value.name);
+							initialFValues.vehicle = event.target.value.name;
 						}}
 					/>
 				</Grid>
@@ -321,7 +356,7 @@ export default function EditTaskForm(props) {
 							variant="contained"
 							endIcon={<SendIcon />}
 							onClick={() => {
-								doEd(initialFValues);
+								doUpdate(initialFValues);
 								handleCloseDialog();
 							}}
 						>

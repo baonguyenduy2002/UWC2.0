@@ -16,6 +16,7 @@ import {
 	parseISO,
 	startOfToday,
 } from "date-fns";
+import vi from "date-fns/locale/vi";
 import "./Calendar.css";
 import AddDialogs from "./Dialog";
 import EditDialogs from "./EditLog";
@@ -111,7 +112,7 @@ const TaskCalendar = () => {
 					<div className="CalendarFrame">
 						<div className="CalendarHeader">
 							<h2 className="CalendarHeaderTitle">
-								{format(firstDayCurrentMonth, "MMMM yyyy")}
+								{format(firstDayCurrentMonth, "MMMM yyyy", { locale: vi })}
 							</h2>
 							<button
 								type="button"
@@ -184,9 +185,11 @@ const TaskCalendar = () => {
 					<section className="ScheduleFrame">
 						<div className="ScheduleHeaderField">
 							<h2 className="ScheduleHeader">
-								Schedule for{" "}
-								<time dateTime={format(selectedDay, "yyyy-MM-dd")}>
-									{format(selectedDay, "MMM dd, yyy")}
+								Danh sách công việc của{" "}
+								<time
+									dateTime={format(selectedDay, "yyyy-MM-dd", { locale: vi })}
+								>
+									{format(selectedDay, "MMM dd, yyy", { locale: vi })}
 								</time>
 							</h2>
 							<button
@@ -208,7 +211,7 @@ const TaskCalendar = () => {
 									/>
 								))
 							) : (
-								<p>No task assigned for today.</p>
+								<p>Hôm nay chưa giao công việc</p>
 							)}
 						</ol>
 					</section>
