@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
-import "./ProgressBar.css";
-import ProgressBarBase from "../ProgressBarBase/index";
+import "./ProgressBarMini.css";
+import ProgressBarBaseMini from "../ProgressBarBaseMini/index";
 
-const ProgressBar = (props) => {
+const ProgressBarMini = (props) => {
   const [completedPart, setCompletedPart] = useState(0);
-
   useEffect(() => {
     setCompletedPart(props.status);
   }, [completedPart]);
 
   return (
     <div
-      className="ProgressBarContainer"
+      className="ProgressBarContainer-mini"
       style={{
         width: "fit-content",
-        height: props.size === "small" ? 50 : 80,
+        height: props.size === "big" ? 80 : 50,
       }}
     >
-      <ProgressBarBase
+      <ProgressBarBaseMini
         size={props.size}
         bgColor={
           completedPart > 90
@@ -30,14 +29,16 @@ const ProgressBar = (props) => {
         }
         completedPart={completedPart}
       />
-      <span
+      <p
         style={{
-          position: "absolute",
-          top: props.size === "small" ? 15 : 35,
+          width: 'fit-content',
+          position: "relative",
+          margin: '0px 0px 0px 0px',
+          top: props.size === "big" ? 35 : 14,
           left: 0,
           fontFamily: "'Helvetica'",
           fontWeight: 400,
-          fontSize: props.size === "small" ? 14 : 28,
+          fontSize: props.size === "big" ? 28 : 14,
           lineHeight: "16px",
           color: "#315C57",
           opacity: 0.8,
@@ -48,23 +49,25 @@ const ProgressBar = (props) => {
           : completedPart > 30
           ? "Half Full"
           : "Highly Available"}
-      </span>
-      <span
+      </p>
+      <p
         style={{
-          position: "absolute",
-          top: props.size === "small" ? 15 : 35,
-          right: 0,
+          width: 'fit-content',
+          position: "relative",
+          margin: '0px 0px 0px 0px',
+          left: 240,
+          top: props.size === "big" ? 35 : -4,
           fontFamily: "'Helvetica'",
           fontWeight: 400,
-          fontSize: props.size === "small" ? 14 : 28,
+          fontSize: props.size === "big" ? 28 : 14,
           lineHeight: "16px",
           color: "#315C57",
         }}
       >
         {completedPart}%
-      </span>
+      </p>
     </div>
   );
 };
 
-export default ProgressBar;
+export default ProgressBarMini;

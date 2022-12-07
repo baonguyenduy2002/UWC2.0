@@ -1,0 +1,49 @@
+.TagContainer-mini {
+    width: 260px;
+    height: 130px;
+    background-color: #fff;
+    flex-direction: column;
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-column: 10px;
+    padding: 20px;
+}
+
+.McpTagName-mini {
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+
+    margin-left: 0;
+
+
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}
+
+.McpTagArea-mini {
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+
+    margin-left: 0;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #315C57;
+}
+
+.AddProgressBar-mini {
+    height: fit-content;
+    width: fit-content;
+    margin-left: 0;
+}

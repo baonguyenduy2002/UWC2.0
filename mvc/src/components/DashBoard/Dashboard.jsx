@@ -1,23 +1,24 @@
 import React from "react";
 import "./Dashboard.css"  
 import dashboard_image from "../../assets/image/dashboard_image.svg";
+import MCPTagMini from "../Facility/MCPTagMini/index"
 
 const mcps = [
     {
-        name: "MCP1",
-        status: 0.95,
+        name: "MCP 1",
+        status: 95,
         area: "Area 1",
         location: ""
     },
     {
-        name: "MCP2",
-        status: 0.90,
+        name: "MCP 2",
+        status: 90,
         area: "Area 1",
         location: ""
     },
     {
-        name: "MCP3",
-        status: 0.6,
+        name: "MCP 3",
+        status: 60,
         area: "Area 2",
         location: ""
     },
@@ -50,7 +51,9 @@ export default function Dashboard(){
                 Top 3 fullest MCPs
             </div>
             <div className="MCPsFrame">
-                {mcps.map(MCPsTag)}                    
+                {mcps.map((MCPsTag, idx) => ( 
+                    <MCPTagMini obj={MCPsTag}/>
+                ))}                    
             </div>
             <div className="MapEmployeeFrame">
                 <div className = "DashboardMiniMap">
