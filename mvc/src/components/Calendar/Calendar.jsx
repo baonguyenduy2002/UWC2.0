@@ -16,7 +16,11 @@ import {
 	parseISO,
 	startOfToday,
 } from "date-fns";
+import vi from "date-fns/locale/vi";
 import "./Calendar.css";
+import AddDialogs from "./Dialog";
+import EditDialogs from "./EditLog";
+
 import api from "../../controller/api/route";
 
 function classNames(...classes) {
@@ -35,7 +39,13 @@ const TaskCalendar = () => {
 	const [selectedDay, setSelectedDay] = useState(today);
 	const [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
 	const firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", new Date());
+	const [openAddPopup, setOpenAddPopup] = useState(false);
 
+	const handleOpenAddPopup = () => {
+		setOpenAddPopup(true);
+	};
+
+	//--------------Calendar-------------
 	const days = eachDayOfInterval({
 		start: firstDayCurrentMonth,
 		end: endOfMonth(firstDayCurrentMonth),
@@ -66,6 +76,27 @@ const TaskCalendar = () => {
 		}
 	};
 
+	const handleCreate = async (data) => {
+		try {
+			api.taskController.createTask(data);
+			api.taskController.getTasks().then((res) => {
+				setTaskList(res);
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
+	const handleEdit = async (id, data) => {
+		try {
+			await api.taskController.updateTask(id, data);
+			await api.taskController.getTasks().then((res) => {
+				setTaskList(res);
+			});
+		} catch (error) {
+			console.log(error);
+		}
+	};
 	//----------------------useEffect here--------------------------
 	useEffect(() => {
 		api.taskController.getTasks().then((res) => {
@@ -81,7 +112,7 @@ const TaskCalendar = () => {
 					<div className="CalendarFrame">
 						<div className="CalendarHeader">
 							<h2 className="CalendarHeaderTitle">
-								{format(firstDayCurrentMonth, "MMMM yyyy")}
+								{format(firstDayCurrentMonth, "MMMM yyyy", { locale: vi })}
 							</h2>
 							<button
 								type="button"
@@ -154,12 +185,18 @@ const TaskCalendar = () => {
 					<section className="ScheduleFrame">
 						<div className="ScheduleHeaderField">
 							<h2 className="ScheduleHeader">
-								Schedule for{" "}
-								<time dateTime={format(selectedDay, "yyyy-MM-dd")}>
-									{format(selectedDay, "MMM dd, yyy")}
+								Danh sách công việc của{" "}
+								<time
+									dateTime={format(selectedDay, "yyyy-MM-dd", { locale: vi })}
+								>
+									{format(selectedDay, "MMM dd, yyy", { locale: vi })}
 								</time>
 							</h2>
-							<button type="button" className="AddTaskButton">
+							<button
+								type="button"
+								className="AddTaskButton"
+								onClick={handleOpenAddPopup}
+							>
 								<PlusIcon className="ButtonIcon" aria-hidden="true" />
 							</button>
 						</div>
@@ -170,23 +207,38 @@ const TaskCalendar = () => {
 										task={task}
 										key={task.id}
 										handleRemove={handleRemove}
+										handleEdit={handleEdit}
 									/>
 								))
 							) : (
-								<p>No task assigned for today.</p>
+								<p>Hôm nay chưa giao công việc</p>
 							)}
 						</ol>
 					</section>
 				</div>
 			</div>
+			<AddDialogs
+				openAddPopup={openAddPopup}
+				setOpenAddPopup={setOpenAddPopup}
+				handleCreate={handleCreate}
+			/>
 		</div>
 	);
 };
 
 const Meeting = (props) => {
+	const [openEditPopup, setEditPopup] = useState(false);
+
 	const startDateTime = parseISO(props.task.startDatetime);
 	const endDateTime = parseISO(props.task.endDatetime);
 	const doHandleRemove = () => props.handleRemove(props.task.id);
+
+	const doHandleUpdate = (data) => props.handleEdit(props.task.id, data);
+
+	const doOpenEditPopup = () => {
+		setEditPopup(true);
+	};
+
 	return (
 		<li className="Task">
 			<div className="EmployeeInfoField">
@@ -229,7 +281,11 @@ const Meeting = (props) => {
 						<div className="MenuBox">
 							<Menu.Item>
 								{({ active }) => (
-									<button className={active ? "MenuItemActive" : "MenuItem"}>
+									<button
+										className={active ? "MenuItemActive" : "MenuItem"}
+										onClick={doOpenEditPopup}
+										task={props.task}
+									>
 										Edit
 									</button>
 								)}
@@ -249,6 +305,12 @@ const Meeting = (props) => {
 					</Menu.Items>
 				</Transition>
 			</Menu>
+			<EditDialogs
+				doHandleUpdate={doHandleUpdate}
+				openEditPopup={openEditPopup}
+				setEditPopup={setEditPopup}
+				task={props.task}
+			/>
 		</li>
 	);
 };

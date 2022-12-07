@@ -1,0 +1,12 @@
+.MapFiled{
+    height: 400px;
+    width: 900px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.MapContainer{
+    height: 400px;
+    width: 800px;
+    border-radius: 10px;
+}
